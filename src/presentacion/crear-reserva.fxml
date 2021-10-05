@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentacion.ControladorCrearReserva">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane minHeight="0.0" minWidth="0.0" prefHeight="256.0" prefWidth="553.0" VBox.vgrow="NEVER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="182.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="472.0" minWidth="10.0" prefWidth="418.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets top="5.0" />
+                     </GridPane.margin>
+                     <children>
+                        <TextField fx:id="dni" minWidth="-Infinity" prefHeight="27.0" prefWidth="191.0">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label fx:id="noExisteL" text="*DNI introducido no existe." textFill="#d03b3b">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Label text="DNI " GridPane.halignment="RIGHT" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets top="5.0" />
+                     </GridPane.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <children>
+                        <ComboBox fx:id="direccionDevolucion" prefHeight="25.0" prefWidth="189.0">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <Label text="Fecha Devolución" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                  <DatePicker fx:id="fechaRecogida" promptText="Fecha de recogida" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </DatePicker>
+                  <Label text="Modalidad Alquiler" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <children>
+                        <ComboBox fx:id="modalidadAlquiler" prefHeight="25.0" prefWidth="188.0" />
+                     </children>
+                  </HBox>
+                  <Label text="Fecha Recogida" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                  <DatePicker fx:id="fechaDevolucion" promptText="Fecha de devolución" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </DatePicker>
+                  <Label text="Dirección Devolución" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                  <Label text="Dirección Recogida" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <children>
+                        <ComboBox fx:id="direccionRecogida" prefHeight="25.0" prefWidth="188.0" />
+                     </children>
+                  </HBox>
+                  <Label text="Categoria" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <ComboBox fx:id="categoria" prefHeight="25.0" prefWidth="188.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </GridPane>
+            <Pane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="600.0" VBox.vgrow="ALWAYS" />
+            <Separator prefWidth="200.0" />
+            <HBox VBox.vgrow="NEVER">
+               <children>
+                  <Pane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="cancelar" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#cerrar" text="Cancelar">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="aceptar" alignment="BOTTOM_RIGHT" mnemonicParsing="false" text="Aceptar">
+                     <HBox.margin>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

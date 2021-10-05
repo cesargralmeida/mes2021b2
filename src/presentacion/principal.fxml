@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentacion.ControladorPrincipal">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Cliente">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#crearReserva" text="Crear Reserva" />
+                  <MenuItem mnemonicParsing="false" onAction="#crearCliente" text="Crear Cliente" />
+                  <MenuItem mnemonicParsing="false" onAction="#listarCategorias" text="Listar categorias" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Empleado">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#crearCliente" text="Crear Cliente" />
+                  <MenuItem mnemonicParsing="false" onAction="#listarReservasSucursal" text="Listar Reservas" />
+                  <MenuItem mnemonicParsing="false" onAction="#entregarVehiculoReserva" text="Entregar Vehiculo Reserva" />
+                  <MenuItem mnemonicParsing="false" onAction="#listarCochesSucursal" text="Listar vehículos disponibles" />
+                  <MenuItem mnemonicParsing="false" onAction="#listarCategorias" text="Listar categorias" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Admin">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#listarCategorias" text="Listar categorias" />
+                <MenuItem mnemonicParsing="false" onAction="#listarSucursales" text="Listar sucursales" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
