@@ -1,0 +1,20 @@
+window_sizes 1920 1027 450 1465 877 104
+
+diagrams
+  active  classdiagram_ref 128032 // DiagramaBD
+    1465 877 100 A4 0 0
+end
+show_stereotypes
+selected class_ref 129056 // Daño
+open
+  class_ref 128032 // SUCURSAL
+  attribute_ref 129312 // CVCTC
+  class_ref 128288 // CATEGORIA
+  class_ref 128416 // EMPLEADO
+  class_ref 128544 // RESERVA
+  class_ref 128672 // COCHE
+  class_ref 128800 // ENTREGA
+  class_ref 128928 // DEVOLUCION
+  attribute_ref 142496 // PK_DAÑO
+end
+end

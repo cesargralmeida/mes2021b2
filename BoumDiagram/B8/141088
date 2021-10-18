@@ -1,0 +1,1133 @@
+format 224
+"Basedatos" // Basedatos
+  revision 5
+  modified_by 32 "Menf"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 134560 "DB"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 128032 "SUCURSAL"
+      visibility package stereotype "table"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl "DROP TABLE IF EXISTS ${name};
+CREATE TABLE ${name} ${definition}${comment};
+"
+      
+      attribute 128160 "PK_SUCURSAL"
+	default explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	MysqlPrimaryKey
+	columns
+	  attribute_ref 128032 // ID
+	end
+      end
+
+      attribute 128032 "ID"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 149024 "DIRECCION"
+	default explicit_type "CHAR"
+	multiplicity "25"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+    end
+
+    class 128160 "CLIENTE"
+      visibility package stereotype "table"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl "DROP TABLE IF EXISTS ${name};
+CREATE TABLE ${name} ${definition}${comment};
+"
+      
+      attribute 129568 "PK_CLIENTE"
+	default explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	MysqlPrimaryKey
+	columns
+	  attribute_ref 128288 // DNI
+	end
+      end
+
+      attribute 128288 "DNI"
+	default explicit_type "CHAR"
+	multiplicity "20"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 128416 "NOMBREAPELLIDOS"
+	default explicit_type "CHAR"
+	multiplicity "20"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 128544 "DIRECCION"
+	default explicit_type "CHAR"
+	multiplicity "20"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 128672 "POBLACION"
+	default explicit_type "CHAR"
+	multiplicity "20"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 128800 "CODPOSTAL"
+	default explicit_type "CHAR"
+	multiplicity "5"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 128928 "FECHACARNETCONDUCIR"
+	default explicit_type "TIMESTAMP"
+	multiplicity "5"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 129056 "DIGITOSTC"
+	default explicit_type "CHAR"
+	multiplicity "16"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 129184 "MESTC"
+	default explicit_type "CHAR"
+	multiplicity "2"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 135968 "añoTC"
+	default explicit_type "NUMERIC"
+	multiplicity "4"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 129312 "CVCTC"
+	default explicit_type "CHAR"
+	multiplicity "3"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 129440 "TIPOTC"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+    end
+
+    class 128288 "CATEGORIA"
+      visibility package stereotype "table"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl "DROP TABLE IF EXISTS ${name};
+CREATE TABLE ${name} ${definition}${comment};
+"
+      
+      attribute 130592 "PK_CATEGORIA"
+	default explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	MysqlPrimaryKey
+	columns
+	  attribute_ref 129696 // NOMBRE
+	end
+      end
+
+      attribute 129696 "NOMBRE"
+	default explicit_type "CHAR"
+	multiplicity "20"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 129824 "PRECIOMODILIMITADA"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 129952 "PRECIOMODKMS"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 130080 "PRECIOSEGUROTRIESGO"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 130208 "PRECIOSEGUROTERCEROS"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 130336 "CATEGORIASUPERIOR"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 130464 "PRECIOKMMODKMS"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      classrelation 134560 // FK_CATEGORIA_1 (<unidirectional association>)
+	relation 134560 --->
+	  a role_name "FK_CATEGORIA_1" multiplicity "0..1" public
+	    classrelation_ref 134560 // FK_CATEGORIA_1 (<unidirectional association>)
+	  b parent class_ref 128288 // CATEGORIA
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 130592 // PK_CATEGORIA
+	  columns
+	    attribute_ref 130336 // CATEGORIASUPERIOR
+	  end
+      end
+    end
+
+    class 128416 "EMPLEADO"
+      visibility package stereotype "table"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl "DROP TABLE IF EXISTS ${name};
+CREATE TABLE ${name} ${definition}${comment};
+"
+      
+      attribute 131232 "PK_EMPLEADO"
+	default explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	MysqlPrimaryKey
+	columns
+	  attribute_ref 130720 // DNI
+	end
+      end
+
+      attribute 130720 "DNI"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 130848 "NOMBRE"
+	default explicit_type "CHAR"
+	multiplicity "25"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 130976 "ADMINISTRADOR"
+	default explicit_type "BIT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 131104 "SUCURSAL"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      classrelation 134688 // FK_EMPLEADO_1 (<unidirectional association>)
+	relation 134688 --->
+	  a role_name "FK_EMPLEADO_1" multiplicity "1" public
+	    classrelation_ref 134688 // FK_EMPLEADO_1 (<unidirectional association>)
+	  b parent class_ref 128032 // SUCURSAL
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 128160 // PK_SUCURSAL
+	  columns
+	    attribute_ref 131104 // SUCURSAL
+	  end
+      end
+    end
+
+    class 128544 "RESERVA"
+      visibility package stereotype "table"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl "DROP TABLE IF EXISTS ${name};
+CREATE TABLE ${name} ${definition}${comment};
+"
+      
+      attribute 132384 "PK_RESERVA"
+	default explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	MysqlPrimaryKey
+	columns
+	  attribute_ref 131360 // ID
+	end
+      end
+
+      attribute 131360 "ID"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 131488 "FECHARECOGIDA"
+	default explicit_type "TIMESTAMP"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 131616 "FECHADEVOLUCION"
+	default explicit_type "TIMESTAMP"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 131744 "MODALIDADALQUILER"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 131872 "CATEGORIA"
+	default explicit_type "CHAR"
+	multiplicity "20"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 132000 "CLIENTEREALIZA"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 132128 "SUCURSALRECOGIDA"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 132256 "SUCURSALDEVOLUCION"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      classrelation 134816 // FK_TABLARESERVA_1 (<unidirectional association>)
+	relation 134816 --->
+	  a role_name "FK_TABLARESERVA_1" multiplicity "1" public
+	    classrelation_ref 134816 // FK_TABLARESERVA_1 (<unidirectional association>)
+	  b parent class_ref 128160 // CLIENTE
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 129568 // PK_CLIENTE
+	  columns
+	    attribute_ref 132000 // CLIENTEREALIZA
+	  end
+      end
+
+      classrelation 134944 // FK_TABLARESERVA_4 (<unidirectional association>)
+	relation 134944 --->
+	  a role_name "FK_TABLARESERVA_4" multiplicity "1" public
+	    classrelation_ref 134944 // FK_TABLARESERVA_4 (<unidirectional association>)
+	  b parent class_ref 128032 // SUCURSAL
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 128160 // PK_SUCURSAL
+	  columns
+	    attribute_ref 132128 // SUCURSALRECOGIDA
+	  end
+      end
+
+      classrelation 135072 // FK_TABLARESERVA_5 (<unidirectional association>)
+	relation 135072 --->
+	  a role_name "FK_TABLARESERVA_5" multiplicity "1" public
+	    classrelation_ref 135072 // FK_TABLARESERVA_5 (<unidirectional association>)
+	  b parent class_ref 128032 // SUCURSAL
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 128160 // PK_SUCURSAL
+	  columns
+	    attribute_ref 132256 // SUCURSALDEVOLUCION
+	  end
+      end
+
+      classrelation 135200 // FK_TABLARESERVA_2 (<unidirectional association>)
+	relation 135200 --->
+	  a role_name "FK_TABLARESERVA_2" multiplicity "1" public
+	    classrelation_ref 135200 // FK_TABLARESERVA_2 (<unidirectional association>)
+	  b parent class_ref 128288 // CATEGORIA
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 130592 // PK_CATEGORIA
+	  columns
+	    attribute_ref 131872 // CATEGORIA
+	  end
+      end
+
+      classrelation 135712 // <unidirectional association>
+	relation 135712 --->
+	  a role_name "" public
+	    classrelation_ref 135712 // <unidirectional association>
+	  b parent class_ref 128544 // RESERVA
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+      end
+    end
+
+    class 128672 "COCHE"
+      visibility package stereotype "table"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl "DROP TABLE IF EXISTS ${name};
+CREATE TABLE ${name} ${definition}${comment};
+"
+      
+      attribute 133152 "PK_COCHE"
+	default explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	MysqlPrimaryKey
+	columns
+	  attribute_ref 132512 // MATRICULA
+	end
+      end
+
+      attribute 132512 "MATRICULA"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 132640 "KMSACTUALES"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 132768 "SUCURSAL"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn
+      end
+
+      attribute 132896 "CATEGORIA"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 133024 "NOMBRE"
+	default explicit_type "CHAR"
+	multiplicity "20"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      classrelation 135328 // FK_TABLACOCHE_1 (<unidirectional association>)
+	relation 135328 --->
+	  a role_name "FK_TABLACOCHE_1" multiplicity "0..1" public
+	    classrelation_ref 135328 // FK_TABLACOCHE_1 (<unidirectional association>)
+	  b parent class_ref 128032 // SUCURSAL
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 128160 // PK_SUCURSAL
+	  columns
+	    attribute_ref 132768 // SUCURSAL
+	  end
+      end
+
+      classrelation 135456 // FK_TABLACOCHE_2 (<unidirectional association>)
+	relation 135456 --->
+	  a role_name "FK_TABLACOCHE_2" multiplicity "1" public
+	    classrelation_ref 135456 // FK_TABLACOCHE_2 (<unidirectional association>)
+	  b parent class_ref 128288 // CATEGORIA
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 130592 // PK_CATEGORIA
+	  columns
+	    attribute_ref 133024 // NOMBRE
+	  end
+      end
+    end
+
+    class 128800 "ENTREGA"
+      visibility package stereotype "table"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl "DROP TABLE IF EXISTS ${name};
+CREATE TABLE ${name} ${definition}${comment};
+"
+      
+      attribute 134176 "PK_ENTREGA"
+	default explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	MysqlPrimaryKey
+	columns
+	  attribute_ref 133280 // ID
+	end
+      end
+
+      attribute 133280 "ID"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 133408 "FECHA"
+	default explicit_type "TIMESTAMP"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 133536 "TIPOSEGURO"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 133664 "KMS"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 133792 "COMBUSTIBLE"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 133920 "COCHEASIGNADO"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 134048 "EMPLEADOREALIZA"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      classrelation 135584 // FK_TABLAENTREGA_1 (<unidirectional association>)
+	relation 135584 --->
+	  a role_name "FK_TABLAENTREGA_1" multiplicity "1" public
+	    classrelation_ref 135584 // FK_TABLAENTREGA_1 (<unidirectional association>)
+	  b parent class_ref 128544 // RESERVA
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 132384 // PK_RESERVA
+	  columns
+	    attribute_ref 133280 // ID
+	  end
+      end
+
+      classrelation 135840 // FK_TABLAENTREGA_3 (<unidirectional association>)
+	relation 135840 --->
+	  a role_name "FK_TABLAENTREGA_3" multiplicity "1" public
+	    classrelation_ref 135840 // FK_TABLAENTREGA_3 (<unidirectional association>)
+	  b parent class_ref 128416 // EMPLEADO
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 131232 // PK_EMPLEADO
+	  columns
+	    attribute_ref 134048 // EMPLEADOREALIZA
+	  end
+      end
+
+      classrelation 135968 // FK_TABLADEVOLUCION_2 (<unidirectional association>)
+	relation 135968 --->
+	  a role_name "FK_TABLADEVOLUCION_2" multiplicity "1" public
+	    classrelation_ref 135968 // FK_TABLADEVOLUCION_2 (<unidirectional association>)
+	  b parent class_ref 128672 // COCHE
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 133152 // PK_COCHE
+	  columns
+	    attribute_ref 133920 // COCHEASIGNADO
+	  end
+      end
+    end
+
+    class 128928 "DEVOLUCION"
+      visibility package stereotype "table"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl "DROP TABLE IF EXISTS ${name};
+CREATE TABLE ${name} ${definition}${comment};
+"
+      
+      attribute 135200 "PK_DEVOLUCION"
+	default explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	MysqlKey
+	columns
+	  attribute_ref 134304 // ID
+	end
+      end
+
+      attribute 134304 "ID"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 134432 "FECHA"
+	default explicit_type "TIMESTAMP"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 134560 "TOTALACOBRAR"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 134688 "COBRADO"
+	default explicit_type "BIT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 134816 "KMS"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 134944 "COMBUSTIBLE"
+	default explicit_type "DOUBLE"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 135072 "EMPLEADOREALIZA"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      classrelation 136096 // FK_TABLADEVOLUCION_1 (<unidirectional association>)
+	relation 136096 --->
+	  a role_name "FK_TABLADEVOLUCION_1" multiplicity "1" public
+	    classrelation_ref 136096 // FK_TABLADEVOLUCION_1 (<unidirectional association>)
+	  b parent class_ref 128800 // ENTREGA
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 134176 // PK_ENTREGA
+	  columns
+	    attribute_ref 134304 // ID
+	  end
+      end
+
+      classrelation 136224 // FK_TABLADEVOLUCION_2 (<unidirectional association>)
+	relation 136224 --->
+	  a role_name "FK_TABLADEVOLUCION_2" multiplicity "1" public
+	    classrelation_ref 136224 // FK_TABLADEVOLUCION_2 (<unidirectional association>)
+	  b parent class_ref 128416 // EMPLEADO
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 131232 // PK_EMPLEADO
+	  columns
+	    attribute_ref 135072 // EMPLEADOREALIZA
+	  end
+      end
+    end
+
+    class 129056 "Daño"
+      visibility package stereotype "table"
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl "DROP TABLE IF EXISTS ${name};
+CREATE TABLE ${name} ${definition}${comment};
+"
+      
+      attribute 142496 "PK_DAÑO"
+	default explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	MysqlPrimaryKey
+	columns
+	  attribute_ref 135328 // ID
+	end
+      end
+
+      attribute 135328 "ID"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 135456 "ZONA"
+	default explicit_type "CHAR"
+	multiplicity "10"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 135584 "DESCRIPCION"
+	default explicit_type "CHAR"
+	multiplicity "50"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 135712 "ENTREGA"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      attribute 135840 "DEVOLUCION"
+	default explicit_type "INT"
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl "  ${name} ${type}${notnull}${default}${autoincr}${comment}"
+	MysqlColumn notnull_hash
+      end
+
+      classrelation 136352 // FK_TablaDaño_1 (<unidirectional association>)
+	relation 136352 --->
+	  a role_name "FK_TablaDaño_1" multiplicity "0..1" public
+	    classrelation_ref 136352 // FK_TablaDaño_1 (<unidirectional association>)
+	  b parent class_ref 128800 // ENTREGA
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 134176 // PK_ENTREGA
+	  columns
+	    attribute_ref 135712 // ENTREGA
+	  end
+      end
+
+      classrelation 136480 // FK_TablaDaño_2 (<unidirectional association>)
+	relation 136480 --->
+	  a role_name "FK_TablaDaño_2" multiplicity "0..1" public
+	    classrelation_ref 136480 // FK_TablaDaño_2 (<unidirectional association>)
+	  b parent class_ref 128928 // DEVOLUCION
+	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
+	  ref_key attribute_ref 135200 // PK_DEVOLUCION
+	  columns
+	    attribute_ref 135840 // DEVOLUCION
+	  end
+      end
+    end
+
+    classdiagram 128032 "DiagramaBD"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+  end
+end
