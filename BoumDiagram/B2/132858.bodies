@@ -1,0 +1,53 @@
+class EntregaDAOImp
+!!!170362.java!!!	EntregaDAOImp()
+		super();
+		try{
+		connManager= new ConnectionManager("alquilervehiculosBD");
+		}
+		catch (ClassNotFoundException e){	
+			throw new DAOExcepcion(e);
+			}
+!!!170490.java!!!	crearEntrega(inout e : EntregaDTO) : void
+		try{
+			connManager.connect();
+			
+			Timestamp fecha = Timestamp.valueOf(e.getFecha());
+			
+			String DBQ = "insert into Entrega values('"
+			+e.getId()
+			+"','"+fecha
+			+"','"+e.getTipoSeguro()
+			+"','"+e.getKms()
+			+"','"+e.getCombustible()
+			+"','"+e.getTiene_asociado()
+			+"','"+e.getEs_realizada_por()+"')";
+			
+			connManager.queryDB(DBQ);
+			connManager.close();
+			
+		} catch (SQLException s){	throw new DAOExcepcion(s);}	
+
+		
+		
+!!!170618.java!!!	buscarEntrega(in id : int) : EntregaDTO
+		try {
+			connManager.connect();
+			ResultSet rs = connManager
+					.queryDB("select * from ENTREGA where ID= '" + id + "'");
+			connManager.close();
+
+			if (rs.next())
+				return new EntregaDTO(rs.getInt("ID"),
+						LocalDateTime.of(rs
+								.getDate("FECHA").toLocalDate(),
+								rs.getTime("FECHA").toLocalTime()),
+						rs.getString("TIPOSEGURO"),
+						rs.getDouble("KMS"),
+						rs.getDouble("COMBUSTIBLE"),
+						rs.getString("COCHEASIGNADO"),
+						rs.getString("EMPLEADOREALIZA"));
+			else
+				return null;
+		} catch (SQLException e) {
+			throw new DAOExcepcion(e);
+		}

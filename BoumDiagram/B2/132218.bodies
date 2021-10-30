@@ -1,0 +1,23 @@
+class ConnectionManager
+!!!168826.java!!!	ConnectionManager(in dbname : String)
+		Class.forName("org.hsqldb.jdbcDriver");
+		sourceURL = "jdbc:hsqldb:file:./data/" + dbname;
+!!!168954.java!!!	connect() : void
+		if (dbcon == null)
+				dbcon = DriverManager.getConnection(sourceURL);
+!!!169082.java!!!	close() : void
+		if (dbcon != null) {
+				dbcon.close();
+				dbcon = null;
+		}
+!!!169210.java!!!	updateDB(in sql : String) : void
+		if (dbcon != null) {
+				Statement sentencia = dbcon.createStatement();
+				sentencia.executeUpdate(sql);
+		}
+!!!169338.java!!!	queryDB(in sql : String) : ResultSet
+		if (dbcon != null) {
+				Statement sentencia = dbcon.createStatement();
+				return sentencia.executeQuery(sql);
+		}
+		return null;

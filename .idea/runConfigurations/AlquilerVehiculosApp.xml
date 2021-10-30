@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="AlquilerVehiculosApp" type="Application" factoryName="Application" nameIsGenerated="true">
     <envs>
-      <env name="PATH_TO_FX" value="C:\javafx-sdk-11.0.2\lib" />
+      <env name="PATH_TO_FX" value="C:\javafx\lib" />
     </envs>
     <option name="MAIN_CLASS_NAME" value="presentacion.AlquilerVehiculosApp" />
     <module name="isw" />

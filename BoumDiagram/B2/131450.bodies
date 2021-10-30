@@ -1,0 +1,187 @@
+class AlquilerVehiculos
+!!!143354.java!!!	AlquilerVehiculos()
+
+		coleccionClientes = new Hashtable<String, Cliente>();
+		coleccionReservas = new Hashtable<Integer, Reserva>();
+		coleccionCategorias = new Hashtable<String, Categoria>();
+		coleccionSucursales = new Hashtable<Integer, Sucursal>();
+		coleccionEntregas = new Hashtable<Integer, Entrega>();
+		this.dal = DAL.getSingleton();
+		cargaSistema();
+!!!143482.java!!!	getSingleton() : AlquilerVehiculos
+		if (alquiler == null)
+			alquiler = new AlquilerVehiculos();
+
+		return alquiler;
+!!!143610.java!!!	listarReservasSucursal(in id : int) : Reserva
+		ArrayList<Reserva> res = new ArrayList<Reserva>();
+		List<ReservaDTO> resDTO = dal.getReservasSucursal(id);
+		Reserva aux;
+		ReservaDTO auxDTO;
+		Entrega entrega;
+		for (int i = 0; i < resDTO.size(); i++) {
+			auxDTO = resDTO.get(i);
+			aux = new Reserva(auxDTO);
+			aux.setRealizada_por(this.getCliente(auxDTO.getDniCliente()));
+			aux.setLugar_devolucion(this.getSucursal(auxDTO
+					.getIdSucursalDevolucion()));
+			aux.setLugar_recogida(this.getSucursal(auxDTO
+					.getIdSucursalRecogida()));
+			aux.setTiene_asociada(this.getCategoria(auxDTO.getNombreCategoria()));
+
+			entrega = this.getEntrega(auxDTO.getId());
+			
+			if (entrega != null) {
+				aux.setAsociado_a(entrega);
+			}
+			res.add(aux);
+			coleccionReservas.put(aux.getIdReserva(), aux);
+		}
+		return res;
+!!!143738.java!!!	listarCategorias() : Categoria
+		ArrayList<Categoria> arr = new ArrayList<Categoria>();
+		arr.addAll(coleccionCategorias.values());
+		return arr;
+!!!143866.java!!!	listarVehiculosSucursal(in sucursal : int) : Coche
+		ArrayList<Coche> arr = new ArrayList<Coche>();
+		List<CocheDTO> resDTO = dal.obtenerCoches(sucursal);
+		Coche aux;
+		CocheDTO auxDTO;
+		for (int i = 0; i < resDTO.size(); i++) {
+			auxDTO = resDTO.get(i);
+			aux = new Coche(auxDTO);
+			aux.setEsta_en(this.getSucursal(auxDTO.getEsta_en()));
+			arr.add(aux);
+		}
+		return arr;
+!!!143994.java!!!	listarVehiculosCategoriaSucursal(in categoria : String, in sucursal : int) : Coche
+		ArrayList<Coche> arr = this.listarVehiculosSucursal(sucursal);
+		ArrayList<Coche> res = new ArrayList<Coche>();
+		Categoria aux;
+		while (res.size() == 0 && categoria != null) {
+			for (int i = 0; i < arr.size(); i++) {
+				aux = arr.get(i).getTiene();
+				if (aux != null)
+					if (aux.getNombre() == categoria)
+						res.add(arr.get(i));
+			}
+
+			if (res.size() == 0) {
+				aux = this.getCategoria(categoria).getSuperior();
+				if (aux != null) categoria = aux.getNombre();
+				else categoria = null;
+						
+			} else
+				break;
+		}
+		return res;
+!!!144122.java!!!	listarSucursales() : Sucursal
+		ArrayList<Sucursal> arr = new ArrayList<Sucursal>();
+		arr.addAll(coleccionSucursales.values());
+		return arr;
+!!!144250.java!!!	cargaSistema() : void
+		cargaCategorias();
+		cargarSucursales();
+!!!144378.java!!!	cargarSucursales() : void
+
+		List<SucursalDTO> sucDTO = dal.obtenerSucursales();
+		// Crear y añadir todas las categorias a la colección
+		for (SucursalDTO sucI : sucDTO) {
+			addSucursal(new Sucursal(sucI));
+		}
+
+!!!144506.java!!!	cargaCategorias() : void
+		List<CategoriaDTO> listacatDTO = dal.obtenerCategorias();
+		// Crear y añadir todas las categorias a la colección
+		for (CategoriaDTO catDTO : listacatDTO) {
+
+			addCategoria(new Categoria(catDTO));
+
+		}
+		// Actualizar los enlaces que representan la relación “superior”
+		for (CategoriaDTO catDTO : listacatDTO)
+			if (catDTO.getNombreCategoriaSuperior() != null)
+				getCategoria(catDTO.getNombre()).setSuperior(
+						getCategoria(catDTO.getNombreCategoriaSuperior()));
+!!!144634.java!!!	crearReserva(inout fechaRec : LocalDateTime, inout fechaDev : LocalDateTime, in mod : String, inout cliente : Cliente, inout cat : Categoria, inout recogida : Sucursal, inout devolucion : Sucursal) : Reserva
+
+		Reserva r1 = new Reserva(dal.countReservas() + 1, fechaRec, fechaDev,
+				cliente, cat, recogida, devolucion, mod);
+		addReserva(r1);
+		dal.crearReserva(new ReservaDTO(r1));
+		return r1;
+!!!144762.java!!!	crearCliente(in DNI : String, in nombreyApellidos : String, in direccion : String, in poblacion : String, in codPostal : String, inout fechaCarnetConducir : LocalDateTime, in digitosTC : String, in mesTC : int, in anyoTC : int, in cvcTC : int, in tipoTC : String) : Cliente
+
+		Cliente cliente = new Cliente(DNI, nombreyApellidos, direccion,
+				poblacion, codPostal, fechaCarnetConducir, digitosTC, mesTC,
+				anyoTC, cvcTC, tipoTC);
+
+		// Lo añade a la memoria
+		addCliente(cliente);
+
+		// Y le pide a dal que lo almacene
+		dal.crearCliente(new ClienteDTO(cliente));
+		return cliente;
+!!!144890.java!!!	crearEntrega(in id : int, inout fecha : LocalDateTime, in tipoSeguro : String, in kms : double, in combustible : double, in tiene_asociado : String, in es_realizada_por : String) : void
+		EntregaDTO entregaDTO = new EntregaDTO(id, fecha, tipoSeguro, kms, combustible, tiene_asociado, es_realizada_por);
+		dal.crearEntrega(entregaDTO);
+		dal.modificarCoche(tiene_asociado, kms);
+		Entrega entrega = new Entrega(entregaDTO);
+		entrega.setAsociado_a_reserva(this.getReserva(id));
+		entrega.setEs_realizada_por(this.getEmpleado(es_realizada_por));
+		entrega.setTiene_asociado(new Coche(dal.getCoche(tiene_asociado)));
+		this.addEntrega(entrega);
+!!!145018.java!!!	addEntrega(inout e : Entrega) : void
+		coleccionEntregas.put(e.getId(), e);
+!!!145146.java!!!	addCliente(inout c : Cliente) : void
+		coleccionClientes.put(c.getDNI(), c);
+!!!145274.java!!!	removeCliente(in dni : String) : void
+		coleccionClientes.remove(dni);
+!!!145402.java!!!	getCliente(in dni : String) : Cliente
+		Cliente cli = this.coleccionClientes.get(dni);
+		if (cli != null)
+			return cli;
+		ClienteDTO cliDTO = dal.getCliente(dni);
+		if (cliDTO == null)
+			return null;
+		this.addCliente(new Cliente(cliDTO));
+		return new Cliente(cliDTO);
+!!!145530.java!!!	getEntrega(in id : int) : Entrega
+		Entrega ent = this.coleccionEntregas.get(id);
+		if (ent != null)
+			return ent;
+		EntregaDTO entDTO = dal.getEntrega(id);
+		if (entDTO == null)
+			return null;
+		this.addEntrega(new Entrega(entDTO));
+		return new Entrega(entDTO);
+!!!145658.java!!!	getEmpleado(in dni : String) : Empleado
+		EmpleadoDTO empDTO = dal.getEmpleado(dni);
+		if (empDTO == null)
+			return null;
+		return new Empleado(empDTO);
+!!!145786.java!!!	addReserva(inout r : Reserva) : void
+		coleccionReservas.put(r.getIdReserva(), r);
+!!!145914.java!!!	removeReserva(in idReserva : int) : void
+		coleccionReservas.remove(idReserva);
+!!!146042.java!!!	getReserva(in idReserva : int) : Reserva
+		Reserva res = this.coleccionReservas.get(idReserva);
+		if (res != null)
+			return res;
+		ReservaDTO resDTO = dal.getReserva(idReserva);
+		if (resDTO == null)
+			return null;
+		this.addReserva(new Reserva(resDTO));
+		return new Reserva(resDTO);
+!!!146170.java!!!	addCategoria(inout c : Categoria) : void
+		coleccionCategorias.put(c.getNombre(), c);
+!!!146298.java!!!	removeCategoria(in nombre : String) : void
+		coleccionCategorias.remove(nombre);
+!!!146426.java!!!	getCategoria(in nombre : String) : Categoria
+		return coleccionCategorias.get(nombre);
+!!!146554.java!!!	addSucursal(inout s : Sucursal) : void
+		coleccionSucursales.put(s.getIdSucursal(), s);
+!!!146682.java!!!	removeSucursal(in idSucursal : int) : void
+		coleccionSucursales.remove(idSucursal);
+!!!146810.java!!!	getSucursal(in idSucursal : int) : Sucursal
+		return coleccionSucursales.get(idSucursal);

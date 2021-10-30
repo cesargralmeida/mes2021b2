@@ -1,0 +1,29 @@
+class Coche
+!!!152570.java!!!	Coche(in matricula : String, in kmsActuales : int, inout tiene : Categoria)
+		super();
+		this.matricula = matricula;
+		this.kmsActuales = kmsActuales;
+		this.tiene = tiene;
+!!!152698.java!!!	Coche(inout coche : CocheDTO)
+		this.matricula = coche.getMatricula();
+		this.kmsActuales = coche.getKmsActuales();
+		this.tiene = AlquilerVehiculos.getSingleton().getCategoria(coche.getCategoria());
+!!!152826.java!!!	getMatricula() : String
+		return matricula;
+!!!152954.java!!!	setMatricula(in matricula : String) : void
+		this.matricula = matricula;
+!!!153082.java!!!	getKmsActuales() : double
+		return kmsActuales;
+!!!153210.java!!!	setKmsActuales(in kmsActuales : int) : void
+		this.kmsActuales = kmsActuales;
+!!!153338.java!!!	getTiene() : Categoria
+		return tiene;
+!!!153466.java!!!	setTiene(inout tiene : Categoria) : void
+		this.tiene = tiene;
+!!!153594.java!!!	getEsta_en() : Sucursal
+		return esta_en;
+!!!153722.java!!!	setEsta_en(inout esta_en : Sucursal) : void
+		this.esta_en = esta_en;
+!!!153850.java!!!	toString() : String
+		return "Coche [matricula=" + matricula + ", kmsActuales=" + kmsActuales
+				+ ", tiene=" + tiene + ", esta_en=" + esta_en + "]";

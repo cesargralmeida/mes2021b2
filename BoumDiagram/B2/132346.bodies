@@ -1,0 +1,57 @@
+class ClienteDAOImp
+!!!167546.java!!!	ClienteDAOImp()
+		super();
+		try{
+		connManager= new ConnectionManager("alquilervehiculosBD");
+		}
+		catch (ClassNotFoundException e){	
+			throw new DAOExcepcion(e);
+			}
+!!!167674.java!!!	buscarCliente(in dni : String) : ClienteDTO
+		try{
+			connManager.connect();
+			ResultSet rs=connManager.queryDB("select * from CLIENTE where DNI= '"+dni.trim()+"'");
+			connManager.close();
+		
+			if (rs.next())
+				return new ClienteDTO(
+							dni.trim(),
+							rs.getString("NOMBREAPELLIDOS"),
+							rs.getString("DIRECCION"),
+							rs.getString("POBLACION"),
+							rs.getString("CODPOSTAL"),
+							LocalDateTime.of(rs.getDate("FECHACARNETCONDUCIR").toLocalDate()
+									,rs.getTime("FECHACARNETCONDUCIR").toLocalTime()),
+							rs.getString("DIGITOSTC"),
+							rs.getInt("MESTC"),
+							rs.getInt("añoTC"),
+							rs.getInt("CVCTC"),
+							rs.getString("TipoTC"));
+			else
+				return null;	
+		}
+		catch (SQLException e){	throw new DAOExcepcion(e);}	
+!!!167802.java!!!	crearCliente(inout c : ClienteDTO) : void
+		try{
+			connManager.connect();
+			
+			Timestamp fechaCarnet = Timestamp.valueOf(c.getFechaCarnetConducir());
+			
+			String DBQ = "insert into Cliente values('"
+			+c.getDni()
+			+"','"+c.getNombreyApellidos()
+			+"','"+c.getDireccion()
+			+"','"+c.getPoblacion()
+			+"','"+c.getCodPostal()
+			+"','"+fechaCarnet
+			+"','"+c.getDigitosTC()
+			+"',"+c.getMesTC()
+			+","+c.getAñoTC()
+			+","+c.getCvcTC()
+			+",'"+c.getTipoTC()+"')";
+			
+			connManager.queryDB(DBQ);
+			connManager.close();
+			
+		} catch (SQLException e){	throw new DAOExcepcion(e);}	
+

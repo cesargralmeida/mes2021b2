@@ -1,0 +1,31 @@
+class ControladorListarCategorias
+!!!175482.java!!!	nombreSuperior(inout c : Categoria) : String
+    
+    	if(c != null) return c.getNombre();
+    	else return "";
+!!!175610.java!!!	initialize(inout location : URL, inout resources : ResourceBundle) : void
+		stage = new Stage(StageStyle.DECORATED);
+		stage.setTitle("LISTADO DE CATEGORIAS");
+		aceptar.setOnAction(event -> stage.close());
+		nombreC.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param
+				.getValue().getNombre()));
+		precioSeguroTercerosC.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(
+				param.getValue().getPrecioSeguroTerceros()));
+		categoriaSuperiorC.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(nombreSuperior(param
+				.getValue().getSuperior())));
+		precioSeguroTodoRiesgoC.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param
+				.getValue().getPrecioSeguroTRiesgo()));
+		precioModLimitadaC.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param
+				.getValue().getPrecioModIlimitada()));
+		precioModKmsC.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param
+				.getValue().getPrecioKmModKms()));
+		
+		try {
+			
+			
+			this.categoriasT.getItems().addAll(
+					AlquilerVehiculos.getSingleton().listarCategorias());
+		} catch (DAOExcepcion e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}

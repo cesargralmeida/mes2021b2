@@ -1,0 +1,39 @@
+class EmpleadoDAOImp
+!!!169722.java!!!	EmpleadoDAOImp()
+		super();
+		try{
+		connManager= new ConnectionManager("alquilervehiculosBD");
+		}
+		catch (ClassNotFoundException e){	
+			throw new DAOExcepcion(e);
+			}
+!!!169850.java!!!	buscarEmpleado(in dni : String) : EmpleadoDTO
+		try{
+			connManager.connect();
+			ResultSet rs=connManager.queryDB("select * from EMPLEADO where DNI= '"+dni+"'");
+			connManager.close();
+		
+			if (rs.next())
+				return new EmpleadoDTO(
+							rs.getString("DNI"),
+							rs.getString("NOMBRE"),
+							rs.getBoolean("ADMINISTRADOR"));
+							
+			else
+				return null;	
+		}
+		catch (SQLException e){	throw new DAOExcepcion(e);}	
+!!!169978.java!!!	crearEmpleado(inout e : EmpleadoDTO) : void
+		try{
+			connManager.connect();
+			
+			String DBQ = "insert into Cliente values('"+
+			e.getDni()+"','"+
+			e.getNombreyApellidos()+"','"+
+			e.getAdministrador();
+					
+			connManager.queryDB(DBQ);
+			connManager.close();
+			
+		} catch (SQLException s){	throw new DAOExcepcion(s);}	
+

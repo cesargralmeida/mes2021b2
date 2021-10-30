@@ -1,0 +1,53 @@
+class ReservaDTO
+!!!139770.java!!!	ReservaDTO(in id : int, inout fechaRecogida : LocalDateTime, inout fechaDevolucion : LocalDateTime, in modalidadAlquiler : String, in dniCliente : String, in nombreCategoria : String, in idSucursalRecogida : int, in idSucursalDevolucion : int)
+		super();
+		this.id = id;
+		this.fechaRecogida = fechaRecogida;
+		this.fechaDevolucion = fechaDevolucion;
+		this.modalidadAlquiler = modalidadAlquiler;
+		this.dniCliente = dniCliente;
+		this.nombreCategoria = nombreCategoria;
+		this.idSucursalRecogida = idSucursalRecogida;
+		this.idSucursalDevolucion = idSucursalDevolucion;
+!!!139898.java!!!	ReservaDTO(inout res : Reserva)
+		super();
+		this.id = res.getIdReserva();
+		this.fechaRecogida = res.getFechaRecogida();
+		this.fechaDevolucion = res.getFechaDevolucion();
+		this.modalidadAlquiler = res.getModalidadAlquiler();
+		this.dniCliente = res.getRealizada_por().getDNI();
+		this.nombreCategoria = res.getTiene_asociada().getNombre();
+		this.idSucursalRecogida = res.getLugar_recogida().getIdSucursal();
+		this.idSucursalDevolucion = res.getLugar_devolucion().getIdSucursal();
+!!!140026.java!!!	getId() : int
+		return id;
+!!!140154.java!!!	setId(in id : int) : void
+		this.id = id;
+!!!140282.java!!!	getFechaRecogida() : LocalDateTime
+		return fechaRecogida;
+!!!140410.java!!!	setFechaRecogida(inout fechaRecogida : LocalDateTime) : void
+		this.fechaRecogida = fechaRecogida;
+!!!140538.java!!!	getFechaDevolucion() : LocalDateTime
+		return fechaDevolucion;
+!!!140666.java!!!	setFechaDevolucion(inout fechaDevolucion : LocalDateTime) : void
+		this.fechaDevolucion = fechaDevolucion;
+!!!140794.java!!!	getModalidadAlquiler() : String
+		return modalidadAlquiler;
+!!!140922.java!!!	setModalidadAlquiler(in modalidadAlquiler : String) : void
+		this.modalidadAlquiler = modalidadAlquiler;
+!!!141050.java!!!	getDniCliente() : String
+		return dniCliente;
+!!!141178.java!!!	setDniCliente(in dniCliente : String) : void
+		this.dniCliente = dniCliente;
+!!!141306.java!!!	getNombreCategoria() : String
+		return nombreCategoria;
+!!!141434.java!!!	setNombreCategoria(in nombreCategoria : String) : void
+		this.nombreCategoria = nombreCategoria;
+!!!141562.java!!!	getIdSucursalRecogida() : int
+		return idSucursalRecogida;
+!!!141690.java!!!	setIdSucursalRecogida(in idSucursalRecogida : int) : void
+		this.idSucursalRecogida = idSucursalRecogida;
+!!!141818.java!!!	getIdSucursalDevolucion() : int
+		return idSucursalDevolucion;
+!!!141946.java!!!	setIdSucursalDevolucion(in idSucursalDevolucion : int) : void
+		this.idSucursalDevolucion = idSucursalDevolucion;

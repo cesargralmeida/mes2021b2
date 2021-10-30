@@ -1,0 +1,51 @@
+class ControladorListarCochesSucursales
+!!!175738.java!!!	listarCoches(in idsucursal : int) : void
+		
+		try {
+			this.cochesT.getItems().clear();
+			this.cochesT.getItems().addAll(
+					AlquilerVehiculos.getSingleton()
+							.listarVehiculosSucursal(idsucursal));
+
+		} catch (DAOExcepcion e) {
+			Alert alerta = new Alert(AlertType.WARNING);
+			alerta.setTitle("Error");
+			alerta.setContentText(e.getMessage());
+			alerta.showAndWait();
+		}
+		
+!!!175866.java!!!	initialize(inout arg0 : URL, inout arg1 : ResourceBundle) : void
+
+		stage = new Stage(StageStyle.DECORATED);
+		stage.setTitle("LISTADO DE COCHES");
+
+		ArrayList<Sucursal> sucurs = new ArrayList<Sucursal>();
+		try {
+			sucurs = AlquilerVehiculos.getSingleton().listarSucursales();
+		} catch (DAOExcepcion e) {
+			Alert alerta = new Alert(AlertType.WARNING);
+			alerta.setTitle("Error");
+			alerta.setContentText(e.getMessage());
+			alerta.showAndWait();
+		}
+		
+		List<Integer> idSucurs = new ArrayList<Integer>();
+		for (int i = 0; i < sucurs.size(); i++) {
+			idSucurs.add(sucurs.get(i).getIdSucursal());
+		}
+		idSucurs.sort(null); //ordena los valores ascendemente
+		sucursalCB.setItems(FXCollections.observableList(idSucurs));
+		
+		matriculaC.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(
+				param.getValue().getMatricula()));
+		
+		kmsActualesC.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(
+				param.getValue().getKmsActuales()));
+		
+		categoriaC.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(
+				param.getValue().getTiene().getNombre()));
+		
+		sucursalCB.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> listarCoches(newValue));
+		aceptarB.setOnAction(event -> aceptar());
+!!!175994.java!!!	aceptar() : void
+		stage.close();

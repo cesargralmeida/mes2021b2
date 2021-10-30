@@ -1,0 +1,20 @@
+class ControladorListarSucursales
+!!!176762.java!!!	initialize(inout location : URL, inout resources : ResourceBundle) : void
+		stage = new Stage(StageStyle.DECORATED);
+		stage.setTitle("LISTADO DE SUCURSALES");
+		//id.sort(null);
+		aceptar.setOnAction(event -> stage.close());
+		id.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param
+				.getValue().getIdSucursal()));
+		id.setStyle("-fx-alignment: CENTER;");
+		direccion.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(
+				param.getValue().getDireccion()));
+		direccion.setStyle("-fx-alignment: CENTER;");
+
+		try {
+			this.sucursales.getItems().addAll(
+					AlquilerVehiculos.getSingleton().listarSucursales());
+		} catch (DAOExcepcion e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}

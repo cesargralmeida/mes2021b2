@@ -1,0 +1,43 @@
+format 224
+"src" // src
+  revision 1
+  modified_by 122 "Cesar"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  java_dir "C:\\source\\repos\\mes2021b2\\src/"
+  package_ref 128250 // comunicacion
+
+  package_ref 128378 // logica
+
+  package_ref 128506 // persistencia
+
+  package_ref 128634 // excepciones
+
+  package_ref 128890 // presentacion
+end

@@ -1,0 +1,16 @@
+class SucursalDTO
+!!!142074.java!!!	SucursalDTO(in id : int, in dirección : String)
+		super();
+		this.id = id;
+		this.dirección = dirección;
+!!!142202.java!!!	SucursalDTO(inout suc : Sucursal)
+		this.id = suc.getIdSucursal();
+		this.dirección = suc.getDireccion();
+!!!142330.java!!!	getId() : int
+		return id;
+!!!142458.java!!!	setId(in id : int) : void
+		this.id = id;
+!!!142586.java!!!	getDirección() : String
+		return dirección;
+!!!142714.java!!!	setDirección(in dirección : String) : void
+		this.dirección = dirección;

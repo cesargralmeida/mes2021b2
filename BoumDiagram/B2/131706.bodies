@@ -1,0 +1,12 @@
+class DAOPersistenceTester
+!!!154746.java!!!	main(inout args : String [[]]) : void
+		AlquilerVehiculos av;
+		try {
+			av = AlquilerVehiculos.getSingleton();
+		
+		Collection<Categoria> categorias = av.listarCategorias();
+		categorias.forEach(categoria -> System.out.println(categoria));
+		} catch (DAOExcepcion e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}

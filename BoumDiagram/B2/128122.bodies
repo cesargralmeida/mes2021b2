@@ -1,0 +1,46 @@
+class CategoriaDTO
+!!!128122.java!!!	CategoriaDTO(in nombre : String, in precioModIlimitada : double, in precioModKms : double, in precioKMModKms : double, in precioSeguroTRiesgo : double, in precioSeguroTerceros : double, in nombreCategoriaSuperior : String)
+		super();
+		this.nombre = nombre;
+		this.precioModIlimitada = precioModIlimitada;
+		this.precioModKms = precioModKms;
+		this.precioKMModKms = precioKMModKms;
+		this.precioSeguroTRiesgo = precioSeguroTRiesgo;
+		this.precioSeguroTerceros = precioSeguroTerceros;
+		this.nombreCategoriaSuperior = nombreCategoriaSuperior;
+!!!128250.java!!!	CategoriaDTO(inout cat : Categoria)
+		nombre = cat.getNombre();
+		precioModIlimitada = cat.getPrecioModIlimitada();
+		precioModKms = cat.getPrecioModKms();
+		precioKMModKms = cat.getPrecioKmModKms();
+		precioSeguroTRiesgo = cat.getPrecioSeguroTRiesgo();
+		precioSeguroTerceros = cat.getPrecioSeguroTerceros();
+		nombreCategoriaSuperior = cat.getSuperior().getNombre();	
+!!!128378.java!!!	getNombre() : String
+		return nombre;
+!!!128506.java!!!	setNombre(in nombre : String) : void
+		this.nombre = nombre;
+!!!128634.java!!!	getPrecioModIlimitada() : double
+		return precioModIlimitada;
+!!!128762.java!!!	setPrecioModIlimitada(in precioModIlimitada : double) : void
+		this.precioModIlimitada = precioModIlimitada;
+!!!128890.java!!!	getPrecioModKms() : double
+		return precioModKms;
+!!!129018.java!!!	setPrecioModKms(in precioModKms : double) : void
+		this.precioModKms = precioModKms;
+!!!129146.java!!!	getPrecioKMModKms() : double
+		return precioKMModKms;
+!!!129274.java!!!	setPrecioKMModKms(in precioKMModKms : double) : void
+		this.precioKMModKms = precioKMModKms;
+!!!129402.java!!!	getPrecioSeguroTRiesgo() : double
+		return precioSeguroTRiesgo;
+!!!129530.java!!!	setPrecioSeguroTRiesgo(in precioSeguroTRiesgo : double) : void
+		this.precioSeguroTRiesgo = precioSeguroTRiesgo;
+!!!129658.java!!!	getPrecioSeguroTerceros() : double
+		return precioSeguroTerceros;
+!!!129786.java!!!	setPrecioSeguroTerceros(in precioSeguroTerceros : double) : void
+		this.precioSeguroTerceros = precioSeguroTerceros;
+!!!129914.java!!!	getNombreCategoriaSuperior() : String
+		return nombreCategoriaSuperior;
+!!!130042.java!!!	setNombreCategoriaSuperior(in nombreCategoriaSuperior : String) : void
+		this.nombreCategoriaSuperior = nombreCategoriaSuperior;

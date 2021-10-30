@@ -1,0 +1,47 @@
+class EntregaDTO
+!!!137722.java!!!	EntregaDTO(in id : int, inout fecha : LocalDateTime, in tipoSeguro : String, in kms : double, in combustible : double, in tiene_asociado : String, in es_realizada_por : String)
+		super();
+		this.id = id;
+		this.fecha = fecha;
+		this.tipoSeguro = tipoSeguro;
+		this.kms = kms;
+		this.combustible = combustible;
+		this.tiene_asociado = tiene_asociado;
+		this.es_realizada_por = es_realizada_por;
+!!!137850.java!!!	EntregaDTO(inout e : Entrega)
+		
+		this.id = e.getId();
+		this.fecha =e.getFecha();
+		this.tipoSeguro =e.getTipoSeguro();
+		this.kms = e.getKms();
+		this.combustible = e.getCombustible();
+		this.tiene_asociado = e.getTiene_asociado().getMatricula();
+		this.es_realizada_por = e.getEs_realizada_por().getDNI();
+!!!137978.java!!!	getId() : int
+		return id;
+!!!138106.java!!!	setId(in id : int) : void
+		this.id = id;
+!!!138234.java!!!	getFecha() : LocalDateTime
+		return fecha;
+!!!138362.java!!!	setFecha(inout fecha : LocalDateTime) : void
+		this.fecha = fecha;
+!!!138490.java!!!	getTipoSeguro() : String
+		return tipoSeguro;
+!!!138618.java!!!	setTipoSeguro(in tipoSeguro : String) : void
+		this.tipoSeguro = tipoSeguro;
+!!!138746.java!!!	getKms() : double
+		return kms;
+!!!138874.java!!!	setKms(in kms : double) : void
+		this.kms = kms;
+!!!139002.java!!!	getCombustible() : double
+		return combustible;
+!!!139130.java!!!	setCombustible(in combustible : double) : void
+		this.combustible = combustible;
+!!!139258.java!!!	getTiene_asociado() : String
+		return tiene_asociado;
+!!!139386.java!!!	setTiene_asociado(in tiene_asociado : String) : void
+		this.tiene_asociado = tiene_asociado;
+!!!139514.java!!!	getEs_realizada_por() : String
+		return es_realizada_por;
+!!!139642.java!!!	setEs_realizada_por(in es_realizada_por : String) : void
+		this.es_realizada_por = es_realizada_por;

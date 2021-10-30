@@ -1,0 +1,78 @@
+class Reserva
+!!!161402.java!!!	Reserva(in idReserva : int, inout fechaRecogida : LocalDateTime, inout fechaDevolucion : LocalDateTime, inout realizada_por : Cliente, inout tiene_asociada : Categoria, inout lugar_recogida : Sucursal, inout lugar_devolucion : Sucursal, in modalidadAlquiler : String)
+		super();
+		this.idReserva = idReserva;
+		this.fechaRecogida = fechaRecogida;
+		this.fechaDevolucion = fechaDevolucion;
+		this.realizada_por = realizada_por;
+		this.tiene_asociada = tiene_asociada;
+		this.lugar_recogida = lugar_recogida;
+		this.lugar_devolucion = lugar_devolucion;
+		this.modalidadAlquiler = modalidadAlquiler;		
+!!!161530.java!!!	Reserva(inout res : ReservaDTO)
+		
+		super();
+		try {
+		this.idReserva = res.getId();
+		this.fechaRecogida = res.getFechaRecogida();
+		this.fechaDevolucion = res.getFechaDevolucion();			
+		this.realizada_por = AlquilerVehiculos.getSingleton().getCliente(res.getDniCliente());		
+		this.tiene_asociada = AlquilerVehiculos.getSingleton().getCategoria(res.getNombreCategoria());
+		this.lugar_recogida =  AlquilerVehiculos.getSingleton().getSucursal(res.getIdSucursalRecogida());
+		this.lugar_devolucion =  AlquilerVehiculos.getSingleton().getSucursal(res.getIdSucursalDevolucion());		
+		this.modalidadAlquiler = res.getModalidadAlquiler();
+		} catch (DAOExcepcion e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+!!!161658.java!!!	getIdReserva() : int
+		return idReserva;
+!!!161786.java!!!	setIdReserva(in idReserva : int) : void
+		this.idReserva = idReserva;
+!!!161914.java!!!	getFechaRecogida() : LocalDateTime
+		return fechaRecogida;
+!!!162042.java!!!	setFechaRecogida(inout fechaRecogida : LocalDateTime) : void
+		this.fechaRecogida = fechaRecogida;
+!!!162170.java!!!	getFechaDevolucion() : LocalDateTime
+		return fechaDevolucion;
+!!!162298.java!!!	setFechaDevolucion(inout fechaDevolucion : LocalDateTime) : void
+		this.fechaDevolucion = fechaDevolucion;
+!!!162426.java!!!	getModalidadAlquiler() : String
+		return modalidadAlquiler;
+!!!162554.java!!!	setModalidadAlquiler(in modalidadAlquiler : String) : void
+		this.modalidadAlquiler = modalidadAlquiler;
+!!!162682.java!!!	getRealizada_por() : Cliente
+		return realizada_por;
+!!!162810.java!!!	setRealizada_por(inout realizada_por : Cliente) : void
+		this.realizada_por = realizada_por;
+!!!162938.java!!!	getTiene_asociada() : Categoria
+		return tiene_asociada;
+!!!163066.java!!!	setTiene_asociada(inout tiene_asociada : Categoria) : void
+		this.tiene_asociada = tiene_asociada;
+!!!163194.java!!!	getLugar_recogida() : Sucursal
+		return lugar_recogida;
+!!!163322.java!!!	setLugar_recogida(inout lugar_recogida : Sucursal) : void
+		this.lugar_recogida = lugar_recogida;
+!!!163450.java!!!	getLugar_devolucion() : Sucursal
+		return lugar_devolucion;
+!!!163578.java!!!	setLugar_devolucion(inout lugar_devolucion : Sucursal) : void
+		this.lugar_devolucion = lugar_devolucion;
+!!!163706.java!!!	getAsociado_a() : Entrega
+		return asociado_a;
+!!!163834.java!!!	setAsociado_a(inout asociado_a : Entrega) : void
+		this.asociado_a = asociado_a;
+!!!163962.java!!!	toString() : String
+		String dni ="", nombre ="";
+		int idSucursalRecogida = -1, idSucursalEntrega = -1, entrega = -1;
+		
+		if (realizada_por != null) dni = realizada_por.getDNI();
+		if (tiene_asociada != null) nombre = tiene_asociada.getNombre();
+		if (lugar_recogida != null) idSucursalRecogida = lugar_recogida.getIdSucursal();
+		if (lugar_devolucion != null) idSucursalEntrega = lugar_devolucion.getIdSucursal();
+		if (asociado_a != null) entrega = asociado_a.getId();
+		 
+		return "Reserva [idReserva=" + idReserva + ", fechaRecogida=" + fechaRecogida + ", fechaDevolucion="
+				+ fechaDevolucion + ", realizada_por=" + dni + ", tiene_asociada=" + nombre
+				+ ", lugar_recogida=" + idSucursalRecogida + ", lugar_devolucion=" + idSucursalEntrega + ", asociado_a="
+				+ entrega + ", modalidadAlquiler=" + modalidadAlquiler + "]";

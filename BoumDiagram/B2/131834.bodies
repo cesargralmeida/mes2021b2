@@ -1,0 +1,35 @@
+class Devolucion
+!!!154874.java!!!	getRealizada_por() : Empleado
+		return realizada_por;
+!!!155002.java!!!	setRealizada_por(inout realizada_por : Empleado) : void
+		this.realizada_por = realizada_por;
+!!!155130.java!!!	addDanyo(inout c : Danyo) : void
+		coleccionDanyos.put(c.getIdDanyo(), c);
+!!!155258.java!!!	removeDanyo(in idDanyo : String) : Danyo
+		return coleccionDanyos.remove(idDanyo);	
+!!!155386.java!!!	getDanyo(in idDanyo : String) : Danyo
+		return coleccionDanyos.get(idDanyo);
+!!!155514.java!!!	getFecha() : LocalDateTime
+		return fecha;
+!!!155642.java!!!	setFecha(inout fecha : LocalDateTime) : void
+		this.fecha = fecha;
+!!!155770.java!!!	getTotalACobrar() : double
+		return totalACobrar;
+!!!155898.java!!!	setTotalACobrar(in totalACobrar : double) : void
+		this.totalACobrar = totalACobrar;
+!!!156026.java!!!	isCobrado() : boolean
+		return cobrado;
+!!!156154.java!!!	setCobrado(inout cobrado : boolean) : void
+		this.cobrado = cobrado;
+!!!156282.java!!!	getKms() : double
+		return kms;
+!!!156410.java!!!	setKms(in kms : double) : void
+		this.kms = kms;
+!!!156538.java!!!	getCombustible() : double
+		return combustible;
+!!!156666.java!!!	setCombustible(in combustible : double) : void
+		this.combustible = combustible;
+!!!156794.java!!!	getAsociado_a() : Entrega
+		return asociado_a;
+!!!156922.java!!!	setAsociado_a(inout asociado_a : Entrega) : void
+		this.asociado_a = asociado_a;

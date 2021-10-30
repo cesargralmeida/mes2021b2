@@ -1,0 +1,21 @@
+class ControladorCasoDeUso
+!!!172666.java!!!	setControladorPrincipal(inout controladorPrincipal : ControladorPrincipal) : void
+		this.controladorPrincipal = controladorPrincipal;
+!!!172794.java!!!	getStage() : Stage
+		return stage;
+!!!172922.java!!!	show() : void
+		stage.show();
+!!!173050.java!!!	initCasoDeUso(in urlVista : String, inout controlClass : Class<T>, inout owner : Stage, inout controladorPrincipal : ControladorPrincipal) : T
+		FXMLLoader fxmlLoader = new FXMLLoader(
+		ControladorCasoDeUso.class.getResource(urlVista));
+		T controlador = null;
+		try {
+			Parent parent = fxmlLoader.load();
+			controlador = fxmlLoader.getController();
+			controlador.stage.setScene(new Scene(parent));
+			controlador.stage.initOwner(owner);
+			controlador.setControladorPrincipal(controladorPrincipal);
+		} catch (NullPointerException | IOException e) {
+			e.printStackTrace();
+		}
+		return controlador;

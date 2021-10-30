@@ -1,0 +1,62 @@
+class CocheDAOImp
+!!!168314.java!!!	CocheDAOImp()
+		super();
+		try{
+		connManager= new ConnectionManager("alquilervehiculosBD");
+		}
+		catch (ClassNotFoundException e){	
+			throw new DAOExcepcion(e);
+			}
+!!!168442.java!!!	listarCoches(in sucursal : int) : CocheDTO
+		try{
+			connManager.connect();
+			ResultSet rs=connManager.queryDB("select * from COCHE where SUCURSAL= '"+sucursal+"'");						
+			connManager.close();
+			
+			List<CocheDTO> listaCocheDTO = new ArrayList<CocheDTO>();
+			
+			try{				
+				while (rs.next()){
+					CocheDTO cocDTO = new CocheDTO(
+							rs.getString("MATRICULA"),
+							rs.getDouble("KMSACTUALES"),
+							rs.getInt("SUCURSAL"),
+							rs.getString("NOMBRE"));//NOMBRE ES CATEGORIA EN LA BASE DE DATOS
+					listaCocheDTO.add(cocDTO);
+				}
+				return listaCocheDTO;
+			}
+			catch (Exception e){ throw new DAOExcepcion(e);}
+		}
+		catch (SQLException e){	throw new DAOExcepcion(e);}	
+		catch (DAOExcepcion e){	throw e;}
+!!!168570.java!!!	modificarVehiculo(in matricula : String, in kms : double) : void
+	
+		try{
+			connManager.connect();
+			connManager.queryDB("UPDATE COCHE SET SUCURSAL = NULL WHERE MATRICULA= '"+matricula+"'");				
+			connManager.queryDB("UPDATE COCHE SET KMSACTUALES = '"+kms+"' WHERE MATRICULA= '"+matricula+"'");				
+			connManager.close();
+		}
+		catch (SQLException e){	throw new DAOExcepcion(e);}
+!!!168698.java!!!	buscarCoche(in matricula : String) : CocheDTO
+		try{
+			connManager.connect();
+			ResultSet rs=connManager.queryDB("select * from COCHE where MATRICULA= '"+matricula+"'");						
+			connManager.close();
+			
+			
+			try{				
+				if (rs.next()){
+					return new CocheDTO(
+							rs.getString("MATRICULA"),
+							rs.getDouble("KMSACTUALES"),
+							rs.getInt("SUCURSAL"),
+							rs.getString("NOMBRE"));//NOMBRE ES CATEGORIA EN LA BASE DE DATOS
+
+			} else return null;
+			}
+			catch (Exception e){ throw new DAOExcepcion(e);}
+		}
+		catch (SQLException e){	throw new DAOExcepcion(e);}	
+		catch (DAOExcepcion e){	throw e;}

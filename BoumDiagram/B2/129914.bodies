@@ -1,0 +1,5 @@
+class DAOExcepcion
+!!!142842.java!!!	DAOExcepcion(in message : String)
+		super(message);
+!!!142970.java!!!	DAOExcepcion(inout e : Exception)
+		super(e.getMessage());

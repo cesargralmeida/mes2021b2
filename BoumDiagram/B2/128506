@@ -1,0 +1,1425 @@
+format 224
+"persistencia" // src::persistencia
+  revision 2
+  modified_by 122 "Cesar"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  java_dir "C:\\source\\repos\\mes2021b2\\src/persistencia/"
+  java_package "persistencia"
+  classview 128378 "persistencia"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 129018 "ICategoriaDAO"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 166650 "buscarCategoria"
+	public return_type class_ref 128122 // CategoriaDTO
+	nparams 1
+	  param in name "nombre" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166778 "obtenerCategorias"
+	public return_type class_ref 128122 // CategoriaDTO
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129146 "IClienteDAO"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 167290 "buscarCliente"
+	public return_type class_ref 128378 // ClienteDTO
+	nparams 1
+	  param in name "dni" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167418 "crearCliente"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "cliente" type class_ref 128378 // ClienteDTO
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129274 "ISucursalDAO"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 171258 "obtenerSucursales"
+	public return_type class_ref 130298 // SucursalDTO
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129402 "IReservaDAO"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 170746 "buscarReserva"
+	public return_type class_ref 130042 // ReservaDTO
+	nparams 1
+	  param in name "identificador" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170874 "obtenerReservasPorSucursalOrigen"
+	public return_type class_ref 130042 // ReservaDTO
+	nparams 1
+	  param in name "idSucursal" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171002 "crearReserva"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "reserva" type class_ref 130042 // ReservaDTO
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171130 "countReservas"
+	public explicit_return_type "int"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129530 "IEntregaDAO"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 170106 "crearEntrega"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "entrega" type class_ref 130170 // EntregaDTO
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170234 "buscarEntrega"
+	public return_type class_ref 130170 // EntregaDTO
+	nparams 1
+	  param in name "id" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129658 "ICocheDAO"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 167930 "modificarVehiculo"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "matricula" explicit_type "String"
+	  param in name "kms" explicit_type "double"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "public CocheDTO buscarCoche(String matricula)throws DAOExcepcion;"
+      end
+
+      operation 168058 "listarCoches"
+	public return_type class_ref 128634 // CocheDTO
+	nparams 1
+	  param in name "sucursal" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168186 "buscarCoche"
+	public return_type class_ref 128634 // CocheDTO
+	nparams 1
+	  param in name "matricula" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129786 "IEmpleadoDAO"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 169466 "buscarEmpleado"
+	public return_type class_ref 130426 // EmpleadoDTO
+	nparams 1
+	  param in name "dni" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169594 "crearEmpleado"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "empleado" type class_ref 130426 // EmpleadoDTO
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132090 "CategoriaDAOImp"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 133114 // <realization>
+	relation 133114 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 133114 // <realization>
+	  b parent class_ref 129018 // ICategoriaDAO
+      end
+
+      classrelation 133242 // connManager (<unidirectional association>)
+	relation 133242 --->
+	  a role_name "connManager" protected
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 133242 // connManager (<unidirectional association>)
+	  b parent class_ref 132218 // ConnectionManager
+      end
+
+      operation 166906 "CategoriaDAOImp"
+	public explicit_return_type ""
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167034 "buscarCategoria"
+	public return_type class_ref 128122 // CategoriaDTO
+	nparams 1
+	  param in name "nombre" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167162 "obtenerCategorias"
+	public return_type class_ref 128122 // CategoriaDTO
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 147578 // <aggregation>
+	relation_ref 147450 // <aggregation>
+      end
+
+      classrelation 149498 // <unidirectional association>
+	relation 148858 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 149498 // <unidirectional association>
+	  b parent class_ref 132218 // ConnectionManager
+      end
+    end
+
+    class 132218 "ConnectionManager"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 138746 "sourceURL"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 138874 "dbcon"
+	private explicit_type "Connection"
+	init_value " null"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 168826 "ConnectionManager"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "dbname" explicit_type "String"
+	nexceptions 1
+	  explicit_exception "ClassNotFoundException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168954 "connect"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  explicit_exception "SQLException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169082 "close"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  explicit_exception "SQLException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169210 "updateDB"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "sql" explicit_type "String"
+	nexceptions 1
+	  explicit_exception "SQLException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169338 "queryDB"
+	public explicit_return_type "ResultSet"
+	nparams 1
+	  param in name "sql" explicit_type "String"
+	nexceptions 1
+	  explicit_exception "SQLException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 132346 "ClienteDAOImp"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 133370 // <realization>
+	relation 133370 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 133370 // <realization>
+	  b parent class_ref 129146 // IClienteDAO
+      end
+
+      classrelation 133498 // connManager (<unidirectional association>)
+	relation 133498 --->
+	  a role_name "connManager" protected
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 133498 // connManager (<unidirectional association>)
+	  b parent class_ref 132218 // ConnectionManager
+      end
+
+      operation 167546 "ClienteDAOImp"
+	public explicit_return_type ""
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167674 "buscarCliente"
+	public return_type class_ref 128378 // ClienteDTO
+	nparams 1
+	  param in name "dni" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 167802 "crearCliente"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "c" type class_ref 128378 // ClienteDTO
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      classrelation 148602 // <aggregation>
+	relation_ref 147962 // <aggregation>
+      end
+
+      classrelation 149882 // <unidirectional association>
+	relation 149242 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 149882 // <unidirectional association>
+	  b parent class_ref 132218 // ConnectionManager
+      end
+    end
+
+    class 132474 "CocheDAOImp"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 133626 // <realization>
+	relation 133626 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 133626 // <realization>
+	  b parent class_ref 129658 // ICocheDAO
+      end
+
+      classrelation 133754 // connManager (<unidirectional association>)
+	relation 133754 --->
+	  a role_name "connManager" protected
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 133754 // connManager (<unidirectional association>)
+	  b parent class_ref 132218 // ConnectionManager
+      end
+
+      operation 168314 "CocheDAOImp"
+	public explicit_return_type ""
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168442 "listarCoches"
+	public return_type class_ref 128634 // CocheDTO
+	nparams 1
+	  param in name "sucursal" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 168570 "modificarVehiculo"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "matricula" explicit_type "String"
+	  param in name "kms" explicit_type "double"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 168698 "buscarCoche"
+	public return_type class_ref 128634 // CocheDTO
+	nparams 1
+	  param in name "matricula" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      classrelation 148090 // <aggregation>
+	relation_ref 147706 // <aggregation>
+      end
+
+      classrelation 149626 // <unidirectional association>
+	relation 148986 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 149626 // <unidirectional association>
+	  b parent class_ref 132218 // ConnectionManager
+      end
+    end
+
+    class 132602 "DevolucionDAOImp"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 132730 "EmpleadoDAOImp"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 133882 // <realization>
+	relation 133882 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 133882 // <realization>
+	  b parent class_ref 129786 // IEmpleadoDAO
+      end
+
+      classrelation 134010 // connManager (<unidirectional association>)
+	relation 134010 --->
+	  a role_name "connManager" protected
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 134010 // connManager (<unidirectional association>)
+	  b parent class_ref 132218 // ConnectionManager
+      end
+
+      operation 169722 "EmpleadoDAOImp"
+	public explicit_return_type ""
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169850 "buscarEmpleado"
+	public return_type class_ref 130426 // EmpleadoDTO
+	nparams 1
+	  param in name "dni" explicit_type "String"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+	comment "DNI CHAR(10) NOT NULL PRIMARY KEY,NOMBRE CHAR(25) NOT NULL,
+ADMINISTRADOR BOOLEAN NOT NULL,SUCURSAL INTEGER NOT NULL,
+CONSTRAINT FK_EMPLEADO_1 FOREIGN KEY(SUCURSAL) REFERENCES SUCURSAL(ID))"
+      end
+
+      operation 169978 "crearEmpleado"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "e" type class_ref 130426 // EmpleadoDTO
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 132858 "EntregaDAOImp"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 134138 // <realization>
+	relation 134138 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 134138 // <realization>
+	  b parent class_ref 129530 // IEntregaDAO
+      end
+
+      classrelation 134266 // connManager (<unidirectional association>)
+	relation 134266 --->
+	  a role_name "connManager" protected
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 134266 // connManager (<unidirectional association>)
+	  b parent class_ref 132218 // ConnectionManager
+      end
+
+      operation 170362 "EntregaDAOImp"
+	public explicit_return_type ""
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170490 "crearEntrega"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "e" type class_ref 130170 // EntregaDTO
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 170618 "buscarEntrega"
+	public return_type class_ref 130170 // EntregaDTO
+	nparams 1
+	  param in name "id" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      classrelation 148346 // <aggregation>
+	relation_ref 147834 // <aggregation>
+      end
+
+      classrelation 149754 // <unidirectional association>
+	relation 149114 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 149754 // <unidirectional association>
+	  b parent class_ref 132218 // ConnectionManager
+      end
+    end
+
+    class 132986 "IDevolucionDAO"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 133114 "ReservaDAOImp"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 134394 // <realization>
+	relation 134394 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 134394 // <realization>
+	  b parent class_ref 129402 // IReservaDAO
+      end
+
+      classrelation 134522 // connManager (<unidirectional association>)
+	relation 134522 --->
+	  a role_name "connManager" protected
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 134522 // connManager (<unidirectional association>)
+	  b parent class_ref 132218 // ConnectionManager
+      end
+
+      operation 171386 "ReservaDAOImp"
+	public explicit_return_type ""
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171514 "buscarReserva"
+	public return_type class_ref 130042 // ReservaDTO
+	nparams 1
+	  param in name "id" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 171642 "countReservas"
+	public explicit_return_type "int"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171770 "crearReserva"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "r" type class_ref 130042 // ReservaDTO
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 171898 "obtenerReservasPorSucursalOrigen"
+	public return_type class_ref 130042 // ReservaDTO
+	nparams 1
+	  param in name "idSucursal" explicit_type "int"
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 133242 "SucursalDAOImp"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 134650 // <realization>
+	relation 134650 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 134650 // <realization>
+	  b parent class_ref 129274 // ISucursalDAO
+      end
+
+      classrelation 134778 // connManager (<unidirectional association>)
+	relation 134778 --->
+	  a role_name "connManager" protected
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 134778 // connManager (<unidirectional association>)
+	  b parent class_ref 132218 // ConnectionManager
+      end
+
+      operation 172026 "SucursalDAOImp"
+	public explicit_return_type ""
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 172154 "obtenerSucursales"
+	public return_type class_ref 130298 // SucursalDTO
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129914 // DAOExcepcion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      classrelation 147834 // <aggregation>
+	relation_ref 147578 // <aggregation>
+      end
+
+      classrelation 149370 // <unidirectional association>
+	relation 148730 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 149370 // <unidirectional association>
+	  b parent class_ref 132218 // ConnectionManager
+      end
+    end
+  end
+
+  deploymentview 128506 "persistencia"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 131066 "ICategoriaDAO"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.List;
+import comunicacion.CategoriaDTO;
+import excepciones.*;
+${definition}"
+      associated_elems
+	class_ref 129018 // ICategoriaDAO
+      end
+      comment "ICategoriaDAO"
+    end
+
+    artifact 131194 "CategoriaDAOImp"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import comunicacion.CategoriaDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 132090 // CategoriaDAOImp
+      end
+    end
+
+    artifact 131322 "IClienteDAO"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import comunicacion.ClienteDTO;
+import excepciones.*;
+${definition}"
+      associated_elems
+	class_ref 129146 // IClienteDAO
+      end
+      comment "IClienteDAO"
+    end
+
+    artifact 131450 "ClienteDAOImp"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import comunicacion.ClienteDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 132346 // ClienteDAOImp
+      end
+    end
+
+    artifact 131578 "ICocheDAO"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.List;
+import comunicacion.CocheDTO;
+import excepciones.*;
+${definition}"
+      associated_elems
+	class_ref 129658 // ICocheDAO
+      end
+      comment "ICategoriaDAO"
+    end
+
+    artifact 131706 "CocheDAOImp"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import comunicacion.CocheDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 132474 // CocheDAOImp
+      end
+    end
+
+    artifact 131834 "ConnectionManager"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.sql.*;
+${definition}"
+      associated_elems
+	class_ref 132218 // ConnectionManager
+      end
+    end
+
+    artifact 131962 "DevolucionDAOImp"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_elems
+	class_ref 132602 // DevolucionDAOImp
+      end
+    end
+
+    artifact 132090 "IEmpleadoDAO"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import comunicacion.EmpleadoDTO;
+import excepciones.*;
+${definition}"
+      associated_elems
+	class_ref 129786 // IEmpleadoDAO
+      end
+      comment "IClienteDAO"
+    end
+
+    artifact 132218 "EmpleadoDAOImp"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import comunicacion.EmpleadoDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 132730 // EmpleadoDAOImp
+      end
+    end
+
+    artifact 132346 "IEntregaDAO"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import comunicacion.EntregaDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 129530 // IEntregaDAO
+      end
+    end
+
+    artifact 132474 "EntregaDAOImp"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import comunicacion.EntregaDTO;
+import comunicacion.ReservaDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 132858 // EntregaDAOImp
+      end
+    end
+
+    artifact 132602 "IDevolucionDAO"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_elems
+	class_ref 132986 // IDevolucionDAO
+      end
+    end
+
+    artifact 132730 "IReservaDAO"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.List;
+import comunicacion.ReservaDTO;
+import excepciones.*;
+${definition}"
+      associated_elems
+	class_ref 129402 // IReservaDAO
+      end
+      comment "IReservaDAO"
+    end
+
+    artifact 132858 "ISucursalDAO"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.List;
+import comunicacion.SucursalDTO;
+import excepciones.*;
+${definition}"
+      associated_elems
+	class_ref 129274 // ISucursalDAO
+      end
+      comment "ISucursalDAO"
+    end
+
+    artifact 132986 "ReservaDAOImp"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import comunicacion.ReservaDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 133114 // ReservaDAOImp
+      end
+    end
+
+    artifact 133114 "SucursalDAOImp"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import comunicacion.SucursalDTO;
+import excepciones.DAOExcepcion;
+${definition}"
+      associated_elems
+	class_ref 133242 // SucursalDAOImp
+      end
+    end
+  end
+end

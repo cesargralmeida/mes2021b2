@@ -1,0 +1,25 @@
+class Empleado
+!!!157050.java!!!	Empleado(in dNI : String, in nombre : String, inout administrador : boolean, inout trabaja : Sucursal)
+		super();
+		DNI = dNI;
+		this.nombre = nombre;
+		this.administrador = administrador;
+		this.trabaja=trabaja;
+!!!157178.java!!!	Empleado(inout e : EmpleadoDTO)
+		super();
+		DNI = e.getDni();
+		this.nombre = e.getNombreyApellidos();
+		this.administrador = e.getAdministrador();
+		this.trabaja=null;
+!!!157306.java!!!	getDNI() : String
+		return DNI;
+!!!157434.java!!!	setDNI(in dNI : String) : void
+		DNI = dNI;
+!!!157562.java!!!	getNombre() : String
+		return nombre;
+!!!157690.java!!!	setNombre(in nombre : String) : void
+		this.nombre = nombre;
+!!!157818.java!!!	getAdministrador() : boolean
+		return administrador;
+!!!157946.java!!!	setAdministrador(inout administrador : boolean) : void
+		this.administrador = administrador;

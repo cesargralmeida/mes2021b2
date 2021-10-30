@@ -1,7 +1,7 @@
 format 224
 "B2"
-  revision 4
-  modified_by 32 "Menf"
+  revision 6
+  modified_by 122 "Cesar"
 
 
   
@@ -37,7 +37,7 @@ format 224
   class_color yellow duration_color transparent continuation_color gray note_color blue fragment_color transparent subject_color transparent usecase_color yellow package_color transparent component_color green artifact_color green deploymentnode_color gray state_color yellow stateaction_color transparent activity_color transparent activityregion_color transparent activitypartition_color transparent activityaction_color transparent parameterpin_color white generalization_color black 
   dpi 0
   font_size 8
-  diagram_format A4
+  diagram_format A0-Landscape
 
   image_root_dir ""
 
@@ -45,4 +45,10 @@ format 224
   mark_for_import
   
   package_ref 141088 // Basedatos
+
+  package_ref 128122 // src
+
+  package_ref 128762 // unknown
+
+  package_ref 129018 // Sec
 end

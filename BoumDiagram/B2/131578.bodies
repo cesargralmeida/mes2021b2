@@ -1,0 +1,13 @@
+class Danyo
+!!!153978.java!!!	getIdDanyo() : String
+		return idDanyo;
+!!!154106.java!!!	setIdDanyo(in idDanyo : String) : void
+		this.idDanyo = idDanyo;
+!!!154234.java!!!	getZona() : String
+		return zona;
+!!!154362.java!!!	setZona(in zona : String) : void
+		this.zona = zona;
+!!!154490.java!!!	getDescripcion() : String
+		return descripcion;
+!!!154618.java!!!	setDescripcion(in descripcion : String) : void
+		this.descripcion = descripcion;

@@ -1,0 +1,5 @@
+class LogicaExcepcion
+!!!143098.java!!!	LogicaExcepcion(in message : String)
+		super(message);
+!!!143226.java!!!	LogicaExcepcion(inout e : Exception)
+		super(e.getMessage());

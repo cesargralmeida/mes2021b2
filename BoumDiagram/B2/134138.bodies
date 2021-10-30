@@ -1,0 +1,212 @@
+class ControladorCrearReserva
+!!!173818.java!!!	dniValido(in d : String) : void
+		try {
+			if (AlquilerVehiculos.getSingleton().getCliente(d) == null) {
+				noExisteL.setVisible(true);
+			} else 	noExisteL.setVisible(false);
+
+		} catch (DAOExcepcion e) {
+			
+		}
+!!!173946.java!!!	initialize(inout location : URL, inout resources : ResourceBundle) : void
+        stage = new Stage(StageStyle.DECORATED);
+        stage.setTitle("CREAR RESERVA");
+
+		noExisteL.setVisible(false);
+
+        dni.textProperty().addListener(
+                (observable, oldValue, newValue) -> dniValido(newValue));
+        
+        
+        
+        // Constructor de fechas válidas
+        Callback<DatePicker, DateCell> dayCellFactory = dp -> new DateCell() {
+                    @Override
+                    public void updateItem(LocalDate item, boolean empty) {
+                        super.updateItem(item, empty);
+
+                        if (item.isBefore(LocalDate.now())) {
+                            setStyle("-fx-background-color: #ffc0cb;");
+                            setDisable(true);
+                        }
+                    }
+                };
+               
+        fechaRecogida.setDayCellFactory(dayCellFactory);
+        fechaDevolucion.setDayCellFactory(dayCellFactory);
+        fechaRecogida.setEditable(false);
+        fechaDevolucion.setEditable(false);
+        fechaRecogida.setConverter(converter);
+        fechaDevolucion.setConverter(converter);
+        
+        
+        fechaRecogida.setOnAction(event -> {
+        	if (fechaDevolucion.getValue() != null)
+	        	if (fechaRecogida.getValue().isAfter(fechaDevolucion.getValue())) {
+	        		fechaDevolucion.setValue(null);
+	        	}
+        	Callback<DatePicker, DateCell> dayCellFactory2 = dp -> new DateCell() {
+                @Override
+                public void updateItem(LocalDate item, boolean empty) {
+                    super.updateItem(item, empty);
+
+                    if (item.isBefore(LocalDate.now()) || item.isBefore(fechaRecogida.getValue())) {
+                        setStyle("-fx-background-color: #ffc0cb;");
+                        setDisable(true);
+                    }
+                }
+            };
+            fechaDevolucion.setDayCellFactory(dayCellFactory2);
+
+           
+        });
+  
+        ArrayList<Sucursal> sucursales;
+		try {
+		sucursales = AlquilerVehiculos.getSingleton().listarSucursales();
+		ArrayList<Categoria> categorias=AlquilerVehiculos.getSingleton().listarCategorias();
+    	List<String> nomCategorias =new ArrayList<String>();
+    	List<String> direcciones = new ArrayList<String>();
+    	List<String> modalidadesAlquiler = new ArrayList<String>();
+    	ArrayList<String> modalidades = new ArrayList<String>();
+    	
+    	modalidades.add("1");
+    	modalidades.add("2");
+    	
+    	modalidadesAlquiler.add("kilometraje ilimitado");
+    	modalidadesAlquiler.add("kilometraje mínimo");
+    	
+    	
+    	
+		int[] idSucursales = new int[sucursales.size()]; 
+		
+		for (int i = 0; i < categorias.size(); i++) {
+    		Categoria aux=categorias.get(i);
+    		nomCategorias.add(aux.getNombre());
+    	}
+
+    	for (int i = 0; i < sucursales.size(); i++) {
+    		Sucursal aux=sucursales.get(i);
+    		direcciones.add(aux.getDireccion());
+    		idSucursales[i]= aux.getIdSucursal();
+    	}
+    	ObservableList<String> categoriasOL = FXCollections.observableList(nomCategorias);
+    	ObservableList<String> modalidadesOL = FXCollections.observableList(modalidadesAlquiler);
+
+		categoria.setItems(categoriasOL); 
+		categoria.getSelectionModel().selectedIndexProperty()
+				.addListener(new ChangeListener<Number>() {
+					public void changed(ObservableValue ov, Number value,Number new_value){
+						categoriaNom=nomCategorias.get(new_value.intValue());
+					}
+				});
+		
+		
+		modalidadAlquiler.setItems(modalidadesOL); 
+		modalidadAlquiler.getSelectionModel().selectedIndexProperty()
+				.addListener(new ChangeListener<Number>() {
+					public void changed(ObservableValue ov, Number value,Number new_value){
+						mod=modalidades.get(new_value.intValue());
+					}
+				});
+		
+		
+    	ObservableList<String> direccionesSuc = FXCollections.observableList(direcciones);
+
+		direccionDevolucion.setItems(direccionesSuc); 
+		direccionDevolucion.getSelectionModel().selectedIndexProperty()
+				.addListener(new ChangeListener<Number>() {
+					public void changed(ObservableValue ov, Number value,Number new_value){
+						idSucursalDev=idSucursales[new_value.intValue()]; 
+					}
+				});
+		
+		direccionRecogida.setItems(direccionesSuc); 
+		direccionRecogida.getSelectionModel().selectedIndexProperty()
+				.addListener(new ChangeListener<Number>() {
+					public void changed(ObservableValue ov, Number value,Number new_value){
+						idSucursalRec=idSucursales[new_value.intValue()];
+					}
+				});
+		} catch (DAOExcepcion e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+        aceptar.setOnAction(event -> {
+            try {
+                if (isInputValid()) {
+                         	
+                    // DATOS
+
+                    String DNI = dni.getText();
+                	cRealiza=AlquilerVehiculos.getSingleton().getCliente(DNI);
+                    LocalDateTime fecRec = fechaRecogida.getValue().atStartOfDay();
+                    LocalDateTime fecDev = fechaDevolucion.getValue().atStartOfDay();         
+                    Sucursal recogida = AlquilerVehiculos.getSingleton().getSucursal(idSucursalRec);
+                    Sucursal devolucion = AlquilerVehiculos.getSingleton().getSucursal(idSucursalDev);
+                    Categoria categoria=AlquilerVehiculos.getSingleton().getCategoria(categoriaNom);
+                    
+                    
+                    AlquilerVehiculos.getSingleton().crearReserva(fecRec,fecDev,mod,cRealiza,categoria,recogida,devolucion);
+                    stage.close();
+                }// fin isInputValid
+            } catch (DAOExcepcion e) {
+                e.printStackTrace();
+            }
+        });
+        
+!!!174074.java!!!	cerrar() : void
+        stage.close();
+!!!174202.java!!!	isInputValid() : boolean
+        String errorMessage = "";
+        LocalDateTime hoy= LocalDateTime.now();
+        Sucursal dev=AlquilerVehiculos.getSingleton().getSucursal(idSucursalDev); 
+        Sucursal rec=AlquilerVehiculos.getSingleton().getSucursal(idSucursalRec);
+        //fecRec,fecDev,mAlq,cRealiza,categoria,recogida,devolucion
+        //DNI,CATEGORIA,MODALIDAD,DIRRECOGIDA,FECHAREC,DIRDEVOLUCION,FECHADEVOLUCION
+        
+            if (AlquilerVehiculos.getSingleton().getCliente(dni.getText()) == null) {
+                errorMessage += "El DNI introducido no está en nuestra base de datos.\n";
+            }
+            if (dni.getText().length() == 0|| dni.getText().length() > 10) {
+                errorMessage += "DNI introducido no válido\n";
+            } 
+            
+            if (categoriaNom== "") {
+                errorMessage += "Categoria no seleccionada.\n";
+            }
+            if (mod == "") {
+                errorMessage += "Modalidad no seleccionada.\n";
+            }
+            if (rec == null) {
+                errorMessage += "La sucursal de recogida no ha sido seleccionada.\n";
+            }
+            if (fechaRecogida.getValue() == null) {
+                errorMessage += "Seleccione una fecha de recogida.\n";
+            }
+            if (dev == null) {
+                errorMessage += "La sucursal de devolución no ha sido seleccionada.\n";
+            }
+            if (fechaDevolucion.getValue() == null) {
+                errorMessage += "Seleccione una fecha de devolucion.\n";
+            }
+         
+        if (errorMessage.length() == 0) {
+            return true;
+        } else {
+
+            Alert alerta = new Alert(AlertType.WARNING);
+            alerta.setTitle("Error");
+            alerta.setContentText(errorMessage);
+            alerta.showAndWait();
+            return false;
+        }
+!!!174330.java!!!	esInt(in s : String) : boolean
+        try {
+            Integer.parseInt( s );
+            return true;
+        }
+        catch( NumberFormatException e ) {
+            return false;
+        }

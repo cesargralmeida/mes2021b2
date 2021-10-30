@@ -1,0 +1,20 @@
+window_sizes 1366 715 284 1077 669 0
+
+diagrams
+  active  classdiagram_ref 128250 // ClasesEntregaVehículo
+    861 590 100 A4 228 0
+  sequencediagram_ref 128122 // EntregaVehiculos
+    289 579 97 A4-Landscape 0 894
+end
+show_stereotypes
+selected class_ref 132218 // ConnectionManager
+open
+  
+  package_ref 141088 // Basedatos
+  classview_ref 128122 // comunicacion
+  classview_ref 128250 // logica
+  classview_ref 128378 // persistencia
+  classview_ref 128762 // presentacion
+  classview_ref 128890 // Entrega
+end
+end

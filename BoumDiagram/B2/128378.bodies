@@ -1,0 +1,73 @@
+class ClienteDTO
+!!!130170.java!!!	ClienteDTO(in dni : String, in nombreyApellidos : String, in direccion : String, in poblacion : String, in codPostal : String, inout fechaCanetConducir : LocalDateTime, in digitosTC : String, in mesTC : int, in añoTC : int, in cvcTC : int, in tipoTC : String)
+		super();
+		this.dni = dni;
+		this.nombreyApellidos = nombreyApellidos;
+		this.direccion = direccion;
+		this.poblacion = poblacion;
+		this.codPostal = codPostal;
+		this.fechaCarnetConducir = fechaCanetConducir;
+		this.digitosTC = digitosTC;
+		this.mesTC = mesTC;
+		this.añoTC = añoTC;
+		this.cvcTC = cvcTC;
+		this.tipoTC = tipoTC;
+!!!130298.java!!!	ClienteDTO(inout c : Cliente)
+		super();
+		this.dni = c.getDNI();
+		this.nombreyApellidos = c.getNombreyApellidos();
+		this.direccion = c.getDireccion();
+		this.poblacion = c.getPoblacion();
+		this.codPostal = c.getCodPostal();
+		this.fechaCarnetConducir = c.getFechaCarnetConducir();
+		this.digitosTC = c.getDigitosTC();
+		this.mesTC = c.getMesTC();
+		this.añoTC = c.getAnyoTC();
+		this.cvcTC = c.getCvcTC();
+		this.tipoTC = c.getTipoTC();
+!!!130426.java!!!	getDni() : String
+		return dni;
+!!!130554.java!!!	setIdentificador(in dni : String) : void
+		this.dni = dni;
+!!!130682.java!!!	getNombreyApellidos() : String
+		return nombreyApellidos;
+!!!130810.java!!!	setNombreyApellidos(in nombreyApellidos : String) : void
+		this.nombreyApellidos = nombreyApellidos;
+!!!130938.java!!!	getDireccion() : String
+		return direccion;
+!!!131066.java!!!	setDireccion(in direccion : String) : void
+		this.direccion = direccion;
+!!!131194.java!!!	getCodPostal() : String
+		return codPostal;
+!!!131322.java!!!	setCodPostal(in codPostal : String) : void
+		this.codPostal = codPostal;
+!!!131450.java!!!	getFechaCarnetConducir() : LocalDateTime
+		return fechaCarnetConducir;
+!!!131578.java!!!	setFechaCanetConducir(inout fechaCanetConducir : LocalDateTime) : void
+		this.fechaCarnetConducir = fechaCanetConducir;
+!!!131706.java!!!	getDigitosTC() : String
+		return digitosTC;
+!!!131834.java!!!	setDigitosTC(in digitosTC : String) : void
+		this.digitosTC = digitosTC;
+!!!131962.java!!!	getMesTC() : int
+		return mesTC;
+!!!132090.java!!!	setMesTC(in mesTC : int) : void
+		this.mesTC = mesTC;
+!!!132218.java!!!	getAñoTC() : int
+		return añoTC;
+!!!132346.java!!!	setAñoTC(in añoTC : int) : void
+		this.añoTC = añoTC;
+!!!132474.java!!!	getCvcTC() : int
+		return cvcTC;
+!!!132602.java!!!	setCvcTC(in cvcTC : int) : void
+		this.cvcTC = cvcTC;
+!!!132730.java!!!	getTipoTC() : String
+		return tipoTC;
+!!!132858.java!!!	setTipoTC(in tipoTC : String) : void
+		this.tipoTC = tipoTC;
+!!!132986.java!!!	getPoblacion() : String
+		return poblacion;
+!!!133114.java!!!	setPoblacion(in poblacion : String) : void
+		this.poblacion = poblacion;
+!!!133242.java!!!	setDni(in dni : String) : void
+		this.dni = dni;
