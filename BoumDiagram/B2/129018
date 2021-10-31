@@ -1,7 +1,7 @@
 format 224
 "Sec" // Sec
-  revision 5
-  modified_by 122 "Cesar"
+  revision 13
+  modified_by 32 "Menf"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -50,14 +50,86 @@ format 224
     
     activitydiagramsettings
      end
-    sequencediagram 128122 "EntregaVehiculos"
-      sequencediagramsettings end
-      size A4-Landscape
-    end
-
     classdiagram 128250 "ClasesEntregaVehículo"
       classdiagramsettings draw_all_relations no member_max_width 0 end
       size A4
+    end
+
+    sequencediagram 134560 "ClasesEntrega"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 134688 "AlquilerVehículosInit"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 134816 "DalInit"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 134944 "CategoriaDAOImpInit"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135200 "SucursalDAOImpInit"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135328 "ReservaDAOImpInit"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135456 "ClienteDAOImpInit"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135584 "EntregaDAOImpInit"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135712 "CocheDAOImpInit"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    sequencediagram 135840 "EmpleadoDAOImpInit"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
+    end
+
+    class 135584 "Usuario"
+      visibility package 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classinstance 134560 "Usuario"
+      type class_ref 135584 // Usuario
+      attributes
+        end
+      relations
+        end
+    end
+
+    sequencediagram 142368 "getCocheFragment"
+      sequencediagramsettings end
+      overlapping_bars size A0-Landscape
     end
   end
 end

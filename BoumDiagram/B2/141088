@@ -1,6 +1,6 @@
 format 224
 "Basedatos" // Basedatos
-  revision 6
+  revision 7
   modified_by 32 "Menf"
   // class settings
   
@@ -364,10 +364,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	MysqlColumn notnull_hash
       end
 
-      classrelation 134560 // FK_CATEGORIA_1 (<unidirectional association>)
+      classrelation 134560 // categoria_superior (<unidirectional association>)
 	relation 134560 --->
-	  a role_name "FK_CATEGORIA_1" multiplicity "0..1" public
-	    classrelation_ref 134560 // FK_CATEGORIA_1 (<unidirectional association>)
+	  a role_name "categoria_superior" multiplicity "0..1" public
+	    classrelation_ref 134560 // categoria_superior (<unidirectional association>)
 	  b parent class_ref 128288 // CATEGORIA
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 130592 // PK_CATEGORIA
@@ -449,10 +449,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	MysqlColumn notnull_hash
       end
 
-      classrelation 134688 // FK_EMPLEADO_1 (<unidirectional association>)
+      classrelation 134688 // sucursal (<unidirectional association>)
 	relation 134688 --->
-	  a role_name "FK_EMPLEADO_1" multiplicity "1" public
-	    classrelation_ref 134688 // FK_EMPLEADO_1 (<unidirectional association>)
+	  a role_name "sucursal" multiplicity "1" public
+	    classrelation_ref 134688 // sucursal (<unidirectional association>)
 	  b parent class_ref 128032 // SUCURSAL
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 128160 // PK_SUCURSAL
@@ -579,10 +579,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	MysqlColumn notnull_hash
       end
 
-      classrelation 134816 // FK_TABLARESERVA_1 (<unidirectional association>)
+      classrelation 134816 // cliente (<unidirectional association>)
 	relation 134816 --->
-	  a role_name "FK_TABLARESERVA_1" multiplicity "1" public
-	    classrelation_ref 134816 // FK_TABLARESERVA_1 (<unidirectional association>)
+	  a role_name "cliente" multiplicity "1" public
+	    classrelation_ref 134816 // cliente (<unidirectional association>)
 	  b parent class_ref 128160 // CLIENTE
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 129568 // PK_CLIENTE
@@ -591,10 +591,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	  end
       end
 
-      classrelation 134944 // FK_TABLARESERVA_4 (<unidirectional association>)
+      classrelation 134944 // sucursal_recogida (<unidirectional association>)
 	relation 134944 --->
-	  a role_name "FK_TABLARESERVA_4" multiplicity "1" public
-	    classrelation_ref 134944 // FK_TABLARESERVA_4 (<unidirectional association>)
+	  a role_name "sucursal_recogida" multiplicity "1" public
+	    classrelation_ref 134944 // sucursal_recogida (<unidirectional association>)
 	  b parent class_ref 128032 // SUCURSAL
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 128160 // PK_SUCURSAL
@@ -603,10 +603,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	  end
       end
 
-      classrelation 135072 // FK_TABLARESERVA_5 (<unidirectional association>)
+      classrelation 135072 // sucursal_devolucion (<unidirectional association>)
 	relation 135072 --->
-	  a role_name "FK_TABLARESERVA_5" multiplicity "1" public
-	    classrelation_ref 135072 // FK_TABLARESERVA_5 (<unidirectional association>)
+	  a role_name "sucursal_devolucion" multiplicity "1" public
+	    classrelation_ref 135072 // sucursal_devolucion (<unidirectional association>)
 	  b parent class_ref 128032 // SUCURSAL
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 128160 // PK_SUCURSAL
@@ -615,10 +615,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	  end
       end
 
-      classrelation 135200 // FK_TABLARESERVA_2 (<unidirectional association>)
+      classrelation 135200 // categoria (<unidirectional association>)
 	relation 135200 --->
-	  a role_name "FK_TABLARESERVA_2" multiplicity "1" public
-	    classrelation_ref 135200 // FK_TABLARESERVA_2 (<unidirectional association>)
+	  a role_name "categoria" multiplicity "1" public
+	    classrelation_ref 135200 // categoria (<unidirectional association>)
 	  b parent class_ref 128288 // CATEGORIA
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 130592 // PK_CATEGORIA
@@ -720,10 +720,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	MysqlColumn notnull_hash
       end
 
-      classrelation 135328 // FK_TABLACOCHE_1 (<unidirectional association>)
+      classrelation 135328 // sucursal (<unidirectional association>)
 	relation 135328 --->
-	  a role_name "FK_TABLACOCHE_1" multiplicity "0..1" public
-	    classrelation_ref 135328 // FK_TABLACOCHE_1 (<unidirectional association>)
+	  a role_name "sucursal" multiplicity "0..1" public
+	    classrelation_ref 135328 // sucursal (<unidirectional association>)
 	  b parent class_ref 128032 // SUCURSAL
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 128160 // PK_SUCURSAL
@@ -732,10 +732,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	  end
       end
 
-      classrelation 135456 // FK_TABLACOCHE_2 (<unidirectional association>)
+      classrelation 135456 // categoria (<unidirectional association>)
 	relation 135456 --->
-	  a role_name "FK_TABLACOCHE_2" multiplicity "1" public
-	    classrelation_ref 135456 // FK_TABLACOCHE_2 (<unidirectional association>)
+	  a role_name "categoria" multiplicity "1" public
+	    classrelation_ref 135456 // categoria (<unidirectional association>)
 	  b parent class_ref 128288 // CATEGORIA
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 130592 // PK_CATEGORIA
@@ -851,10 +851,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	MysqlColumn notnull_hash
       end
 
-      classrelation 135584 // FK_TABLAENTREGA_1 (<unidirectional association>)
+      classrelation 135584 // entrega (<unidirectional association>)
 	relation 135584 --->
-	  a role_name "FK_TABLAENTREGA_1" multiplicity "1" public
-	    classrelation_ref 135584 // FK_TABLAENTREGA_1 (<unidirectional association>)
+	  a role_name "entrega" multiplicity "1" public
+	    classrelation_ref 135584 // entrega (<unidirectional association>)
 	  b parent class_ref 128544 // RESERVA
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 132384 // PK_RESERVA
@@ -863,10 +863,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	  end
       end
 
-      classrelation 135840 // FK_TABLAENTREGA_3 (<unidirectional association>)
+      classrelation 135840 // empleado_realiza (<unidirectional association>)
 	relation 135840 --->
-	  a role_name "FK_TABLAENTREGA_3" multiplicity "1" public
-	    classrelation_ref 135840 // FK_TABLAENTREGA_3 (<unidirectional association>)
+	  a role_name "empleado_realiza" multiplicity "1" public
+	    classrelation_ref 135840 // empleado_realiza (<unidirectional association>)
 	  b parent class_ref 128416 // EMPLEADO
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 131232 // PK_EMPLEADO
@@ -875,10 +875,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	  end
       end
 
-      classrelation 135968 // FK_TABLADEVOLUCION_2 (<unidirectional association>)
+      classrelation 135968 // coche (<unidirectional association>)
 	relation 135968 --->
-	  a role_name "FK_TABLADEVOLUCION_2" multiplicity "1" public
-	    classrelation_ref 135968 // FK_TABLADEVOLUCION_2 (<unidirectional association>)
+	  a role_name "coche" multiplicity "1" public
+	    classrelation_ref 135968 // coche (<unidirectional association>)
 	  b parent class_ref 128672 // COCHE
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 133152 // PK_COCHE
@@ -992,10 +992,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	MysqlColumn notnull_hash
       end
 
-      classrelation 136096 // FK_TABLADEVOLUCION_1 (<unidirectional association>)
+      classrelation 136096 // entrega (<unidirectional association>)
 	relation 136096 --->
-	  a role_name "FK_TABLADEVOLUCION_1" multiplicity "1" public
-	    classrelation_ref 136096 // FK_TABLADEVOLUCION_1 (<unidirectional association>)
+	  a role_name "entrega" multiplicity "1" public
+	    classrelation_ref 136096 // entrega (<unidirectional association>)
 	  b parent class_ref 128800 // ENTREGA
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 134176 // PK_ENTREGA
@@ -1004,10 +1004,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	  end
       end
 
-      classrelation 136224 // FK_TABLADEVOLUCION_2 (<unidirectional association>)
+      classrelation 136224 // realizada_por (<unidirectional association>)
 	relation 136224 --->
-	  a role_name "FK_TABLADEVOLUCION_2" multiplicity "1" public
-	    classrelation_ref 136224 // FK_TABLADEVOLUCION_2 (<unidirectional association>)
+	  a role_name "realizada_por" multiplicity "1" public
+	    classrelation_ref 136224 // realizada_por (<unidirectional association>)
 	  b parent class_ref 128416 // EMPLEADO
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 131232 // PK_EMPLEADO
@@ -1100,10 +1100,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	MysqlColumn notnull_hash
       end
 
-      classrelation 136352 // FK_TablaDaño_1 (<unidirectional association>)
+      classrelation 136352 // entrega (<unidirectional association>)
 	relation 136352 --->
-	  a role_name "FK_TablaDaño_1" multiplicity "0..1" public
-	    classrelation_ref 136352 // FK_TablaDaño_1 (<unidirectional association>)
+	  a role_name "entrega" multiplicity "0..1" public
+	    classrelation_ref 136352 // entrega (<unidirectional association>)
 	  b parent class_ref 128800 // ENTREGA
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 134176 // PK_ENTREGA
@@ -1112,10 +1112,10 @@ CREATE TABLE ${name} ${definition}${comment};
 	  end
       end
 
-      classrelation 136480 // FK_TablaDaño_2 (<unidirectional association>)
+      classrelation 136480 // devolucion (<unidirectional association>)
 	relation 136480 --->
-	  a role_name "FK_TablaDaño_2" multiplicity "0..1" public
-	    classrelation_ref 136480 // FK_TablaDaño_2 (<unidirectional association>)
+	  a role_name "devolucion" multiplicity "0..1" public
+	    classrelation_ref 136480 // devolucion (<unidirectional association>)
 	  b parent class_ref 128928 // DEVOLUCION
 	  mysql_decl "  ${constraint}${modifier}KEY${name}${type} (${columns})${ref}${comment}"
 	  ref_key attribute_ref 135200 // PK_DEVOLUCION
@@ -1126,7 +1126,7 @@ CREATE TABLE ${name} ${definition}${comment};
     end
 
     classdiagram 128032 "DiagramaBD"
-      classdiagramsettings member_max_width 0 end
+      classdiagramsettings draw_all_relations no member_max_width 0 end
       size A4
     end
   end

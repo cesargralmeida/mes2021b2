@@ -1,7 +1,7 @@
 format 224
 "B2"
-  revision 6
-  modified_by 122 "Cesar"
+  revision 7
+  modified_by 32 "Menf"
 
 
   
@@ -44,6 +44,8 @@ format 224
 
   mark_for_import
   
+  ncouples 1
+  key "html dir" value "C:\\Users\\Menf\\Desktop/"
   package_ref 141088 // Basedatos
 
   package_ref 128122 // src

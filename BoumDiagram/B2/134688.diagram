@@ -1,0 +1,113 @@
+format 224
+
+classinstance 128032 class_ref 131450 // AlquilerVehiculos
+  name ""   xyz 6 4 2000 life_line_z 2000
+classinstance 128544 class_ref 128890 // DAL
+  name ""   xyz 147 4 2000 life_line_z 2010
+classinstance 130464 class_ref 132090 // CategoriaDAOImp
+  name ""   xyz 260 4 2000 life_line_z 2000
+classinstance 130848 class_ref 132218 // ConnectionManager
+  name ""   xyz 870 4 2000 life_line_z 2000
+classinstance 132256 class_ref 128122 // CategoriaDTO
+  name ""   xyz 366 4 2000 life_line_z 2000
+durationcanvas 128160 classinstance_ref 128032 // :AlquilerVehiculos
+  xyzwh 50 52 2010 11 364
+  overlappingdurationcanvas 129312
+    xyzwh 56 116 2020 11 294
+    overlappingdurationcanvas 129952
+      xyzwh 62 142 2030 11 262
+    end
+  end
+end
+durationcanvas 128928 classinstance_ref 128544 // :DAL
+  xyzwh 166 74 2010 11 25
+end
+durationcanvas 130208 classinstance_ref 128544 // :DAL
+  xyzwh 166 169 2020 11 235
+end
+durationcanvas 130592 classinstance_ref 130464 // :CategoriaDAOImp
+  xyzwh 304 170 2010 11 219
+end
+durationcanvas 131232 classinstance_ref 130848 // :ConnectionManager
+  xyzwh 920 216 2010 11 25
+end
+durationcanvas 131488 classinstance_ref 130848 // :ConnectionManager
+  xyzwh 920 249 2010 11 25
+end
+durationcanvas 131744 classinstance_ref 130848 // :ConnectionManager
+  xyzwh 920 277 2010 11 25
+end
+durationcanvas 132640 classinstance_ref 132256 // :CategoriaDTO
+  xyzwh 401 330 2010 11 25
+end
+reflexivemsg 128288 synchronous
+  to durationcanvas_ref 128160
+  yz 52 2015 msg operation_ref 143354 // "AlquilerVehiculos()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 65 36
+msg 129056 synchronous
+  from durationcanvas_ref 128160
+  to durationcanvas_ref 128928
+  yz 75 2020 msg operation_ref 134778 // "getSingleton() : DAL"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 75 62
+reflexivemsg 129440 synchronous
+  to durationcanvas_ref 129312
+  yz 116 2025 msg operation_ref 144250 // "cargaSistema() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 66 103
+reflexivemsg 130080 synchronous
+  to durationcanvas_ref 129952
+  yz 142 2035 msg operation_ref 144506 // "cargaCategorias() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 80 127
+msg 130336 synchronous
+  from durationcanvas_ref 129952
+  to durationcanvas_ref 130208
+  yz 175 3005 msg operation_ref 135802 // "obtenerCategorias() : CategoriaDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 86 154
+msg 130720 synchronous
+  from durationcanvas_ref 130208
+  to durationcanvas_ref 130592
+  yz 183 2025 msg operation_ref 167162 // "obtenerCategorias() : CategoriaDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 186 170
+msg 131360 synchronous
+  from durationcanvas_ref 130592
+  to durationcanvas_ref 131232
+  yz 217 2030 msg operation_ref 168954 // "connect() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 594 203
+msg 131616 synchronous
+  from durationcanvas_ref 130592
+  to durationcanvas_ref 131488
+  yz 250 2040 msg operation_ref 169338 // "queryDB(in sql : String) : ResultSet"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  args "\"select * from CATEGORIA\""
+  label_xy 528 236
+msg 131872 synchronous
+  from durationcanvas_ref 130592
+  to durationcanvas_ref 131744
+  yz 278 2040 msg operation_ref 169082 // "close() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 600 264
+msg 132512 return
+  from durationcanvas_ref 130592
+  to durationcanvas_ref 130208
+  yz 377 2045 explicitmsg "listaCategoriaDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 217 363
+msg 132768 synchronous
+  from durationcanvas_ref 130592
+  to durationcanvas_ref 132640
+  yz 331 2015 msg operation_ref 128122 // "CategoriaDTO(in nombre : String, in precioModIlimitada : double, in precioModKms : double, in precioKMModKms : double, in precioSeguroTRiesgo : double, in precioSeguroTerceros : double, in nombreCategoriaSuperior : String)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 321 317
+msg 133280 return
+  from durationcanvas_ref 130208
+  to durationcanvas_ref 129952
+  yz 393 2050 explicitmsg "listaCategoriaDTO"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 78 378
+end
