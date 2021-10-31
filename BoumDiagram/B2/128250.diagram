@@ -1,47 +1,60 @@
 format 224
 
+classcanvas 128032 class_ref 133114 // ReservaDAOImp
+  classdiagramsettings member_max_width 0 end
+  xyz 373 632 2000
+end
 classcanvas 128122 class_ref 133370 // AlquilerVehiculosApp
   classdiagramsettings member_max_width 0 end
   xyz 9 2 2000
 end
+classcanvas 128160 class_ref 133626 // ControladorCasoDeUso
+  classdiagramsettings member_max_width 0 end
+  xyz 231 190 3010
+end
 classcanvas 128250 class_ref 133882 // ControladorPrincipal
   classdiagramsettings member_max_width 0 end
-  xyz 145 2 2000
+  xyz 44 191 2000
+end
+fragment 128288 "Controladores"
+  xyzwh 17 142 2000 591 376
+end
+fragment 128416 "Singletons"
+  xyzwh 17.5 521 2000 345 520
+end
+fragment 128544 "Implementaciones DAO"
+  xyzwh 367 521 2000 318 279
 end
 classcanvas 129146 class_ref 134266 // ControladorEntregarVehiculoReserva
   classdiagramsettings member_max_width 0 end
-  xyz 328 2 3005
+  xyz 375 191 3005
 end
 classcanvas 129658 class_ref 131450 // AlquilerVehiculos
   classdiagramsettings member_max_width 0 end
-  xyz 553 3 2000
+  xyz 43 557 2000
 end
 classcanvas 129786 class_ref 128890 // DAL
   classdiagramsettings member_max_width 0 end
-  xyz 12 113 2005
+  xyz 227 556 2005
 end
 classcanvas 129914 class_ref 132090 // CategoriaDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 151 320 2000
+  xyz 570 546 2000
 end
 classcanvas 130170 class_ref 133242 // SucursalDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 17 405 2000
+  xyz 568 631 2000
 end
 classcanvas 130426 class_ref 132346 // ClienteDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 381 420 2000
+  xyz 373 549 2000
 end
 classcanvas 130554 class_ref 132858 // EntregaDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 380 325 2000
+  xyz 469 548 2000
 end
 classcanvas 130682 class_ref 132474 // CocheDAOImp
   classdiagramsettings member_max_width 0 end
-  xyz 266 322 2010
-end
-classcanvas 131834 class_ref 132218 // ConnectionManager
-  classdiagramsettings member_max_width 0 end
-  xyz 303 982 2000
+  xyz 570 696 2010
 end
 end

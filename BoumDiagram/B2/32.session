@@ -1,11 +1,11 @@
-window_sizes 1920 1027 266 1649 981 0
+window_sizes 1920 1027 428 1487 981 0
 
 diagrams
-  active  sequencediagram_ref 134560 // ClasesEntrega
-    1649 981 100 A0-Landscape 2432 0
+  active  classdiagram_ref 128032 // DiagramaBD
+    1189 784 100 A4 0 0
 end
 show_stereotypes
-selected sequencediagram_ref 142368 // getCocheFragment
+selected classdiagram_ref 128032 // DiagramaBD
 open
   classview_ref 134560 // DB
   classview_ref 128122 // comunicacion

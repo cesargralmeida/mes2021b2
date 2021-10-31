@@ -1,0 +1,56 @@
+format 224
+
+classcanvas 128032 class_ref 130170 // EntregaDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 63 13 2000
+end
+fragment 128160 "DTOs"
+  xyzwh 10 7 2000 602 456
+end
+classcanvas 128288 class_ref 128634 // CocheDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 186 13 2005
+end
+classcanvas 128416 class_ref 130042 // ReservaDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 285 14 2005
+end
+classcanvas 128544 class_ref 130426 // EmpleadoDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 424 14 2005
+end
+fragment 128672 "Clases Lógica"
+  xyzwh 11 466 2000 591 536
+end
+classcanvas 128800 class_ref 130810 // Entrega
+  classdiagramsettings member_max_width 0 end
+  xyz 19 492 2005
+end
+classcanvas 128928 class_ref 128762 // Coche
+  classdiagramsettings member_max_width 0 end
+  xyz 236 491 2011
+end
+classcanvas 129184 class_ref 130938 // Reserva
+  classdiagramsettings member_max_width 0 end
+  xyz 474 518 2011
+end
+classcanvas 129568 class_ref 130426 // EmpleadoDTO
+  classdiagramsettings member_max_width 0 end
+  xyz 342 489 2005
+end
+relationcanvas 129056 relation_ref 131322 // <unidirectional association>
+  from ref 128800 z 2012 to ref 128928
+  role_a_pos 152 615 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129312 relation_ref 132474 // <unidirectional association>
+  from ref 129184 z 2012 to ref 128800
+  role_a_pos 179 725 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129440 relation_ref 131578 // <unidirectional association>
+  from ref 128800 z 2012 to ref 129184
+  role_a_pos 363 721 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

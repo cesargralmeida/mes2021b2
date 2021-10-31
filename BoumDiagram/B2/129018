@@ -1,6 +1,6 @@
 format 224
 "Sec" // Sec
-  revision 13
+  revision 14
   modified_by 32 "Menf"
   // class settings
   
@@ -53,6 +53,11 @@ format 224
     classdiagram 128250 "ClasesEntregaVehículo"
       classdiagramsettings draw_all_relations no member_max_width 0 end
       size A4
+    end
+
+    classdiagram 148896 "ClasesLogicaYDto"
+      classdiagramsettings member_max_width 0 end
+      size A0-Landscape
     end
 
     sequencediagram 134560 "ClasesEntrega"
